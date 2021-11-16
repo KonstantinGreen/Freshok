@@ -1,0 +1,16 @@
+span {
+  display: block;
+}
+
+body {
+  letter-spacing: 0.03em;
+  @extend %OpenSans-400;
+  color: $default;
+}
+
+
+.container {
+  max-width: 1320px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
