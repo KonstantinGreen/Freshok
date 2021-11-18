@@ -1,10 +1,15 @@
 @import 'reset';
 @import 'vars';
 @import 'fonts';
+@import 'libs';
 @import 'global';
-@import 'slick';
 
 
+
+.logo {
+  display: inline-block;
+  margin-right: 24px;
+}
 
 .header {
   &__top {
@@ -26,36 +31,25 @@
 
     &-item {
       margin-right: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
     }
 
     &-item:last-child {
       margin-right: 0;
     }
 
+    &-svg {
+      width: 32px;
+      height: 22px;
+      fill: $white;
+      margin-right: 12px;
+    }
+
     &-link {
-      position: relative;
-      padding-left: 42px;
-
-      &::before {
-        position: absolute;
-        content: '';
-        left: 15px;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 32px;
-        height: 22px;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-      }
-    }
-
-    &-link--delivery::before {
-      background-image: url(../images/icons/delivery.svg);
-    }
-
-    &-link--hotline::before {
-      background-image: url(../images/icons/tel.svg);
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -99,12 +93,6 @@
     }
   }
 
-
-  .logo {
-    margin-right: 24px;
-  }
-
-
   .drop {
     position: relative;
     max-width: 240px;
@@ -126,6 +114,12 @@
         border: 3px solid transparent;
       }
 
+      &-svg {
+        width: 8px;
+        height: 7px;
+        transition: transform 0.5s;
+      }
+
       &-link--leader {
         color: $accent;
         @extend %OpenSans-600;
@@ -135,6 +129,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
 
         &::before {
           position: absolute;
@@ -188,12 +183,20 @@
     }
   }
 
+
+  .drop__list-link--leader--active {
+    .drop__list-svg {
+      transform: rotate(180deg);
+    }
+  }
+
+
   .form-search {
     position: relative;
     max-width: 575px;
     width: 100%;
     z-index: 5;
-    margin-right: 40px;
+    margin-right: 48px;
 
 
     &::before {
@@ -281,6 +284,12 @@
       &:active {
         opacity: 0.5;
       }
+
+      &-svg {
+        width: 32px;
+        height: 30px;
+        fill: $white;
+      }
     }
 
     &__num {
@@ -310,6 +319,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  &__arrow {
+    width: 19px;
+    height: 32px;
+    transition: fill 0.4s;
   }
 
   &__wrapper {
@@ -359,26 +374,17 @@
     outline: 0;
     transition: box-shadow 0.5s, background-color 0.4s;
 
-    path {
-      transition: fill 0.5s;
-    }
-
     &:focus {
       box-shadow: 0 0 0 3px rgba(99, 166, 14, 0.5);
     }
 
     &:hover {
       background-color: $green-200;
-
-      path {
-        fill: $accent;
-      }
+      fill: $accent;
     }
 
     &:active {
-      path {
-        fill: $accent;
-      }
+      fill: $accent;
     }
   }
 
@@ -531,11 +537,10 @@
 
 .products {
   text-align: center;
-  margin-bottom: 42px;
+  margin-bottom: 72px;
 
   &__list {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 18px;
   }
@@ -718,7 +723,11 @@
     left: 0;
     display: block;
     z-index: 5;
-    transition: background-image 0.5s, box-shadow 0.5s;
+    transition: box-shadow 0.5s;
+
+    path {
+      transition: fill 0.5s;
+    }
   }
 
 
@@ -728,15 +737,18 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../images/icons/heart.svg);
   }
 
   &__input+&__content:hover {
-    background-image: url(../images/icons/hearthover.svg);
+    path {
+      fill: $orange;
+    }
   }
 
   &__input:checked+&__content {
-    background-image: url(../images/icons/heartactive.svg);
+    path {
+      fill: $yellow;
+    }
   }
 
   &__input:focus+&__content {
@@ -926,6 +938,249 @@
 
     &-img path:hover {
       fill: $green-200;
+    }
+  }
+}
+
+.banners {
+  margin-bottom: 72px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: 630px 300px 300px;
+    grid-column-gap: 30px;
+  }
+
+  &__item {
+    height: 300px;
+  }
+
+  &__link {
+    display: block;
+    height: 300px;
+  }
+}
+
+
+.promo {
+  text-align: center;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  border: 1px solid #C1C1C1;
+  box-sizing: border-box;
+  border-radius: 6px;
+  max-width: 300px;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 30px;
+
+  &__list {
+    display: flex;
+    padding: 12px;
+
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 12px;
+
+
+    &-status {
+      position: absolute;
+      top: 0;
+      background-color: $accent;
+      font-size: 10px;
+      line-height: 10px;
+      color: $white;
+      padding: 3px 6px;
+      border-radius: 6px;
+      @extend %OpenSans-600;
+    }
+
+    &-title {
+      @extend %OpenSans-600;
+      font-size: 14px;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-availability {
+      @extend %OpenSans-600;
+      font-size: 10px;
+      line-height: 1;
+      color: $accent;
+      margin-bottom: 5px;
+    }
+
+    &-price {
+      display: flex;
+      align-items: center;
+    }
+
+    &-newprice {
+      margin-right: 12px;
+      @extend %OpenSans-600;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    &-oldprice {
+      position: relative;
+      margin-right: 24px;
+      @extend %OpenSans-400;
+      font-size: 12px;
+      line-height: 1;
+      color: $silver;
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid $silver;
+        transform: rotate(-14.99deg);
+        width: 100%;
+        height: 50%;
+
+      }
+    }
+
+    &-ratings {
+      display: flex;
+      align-items: center;
+      @extend %OpenSans-700;
+      font-size: 14px;
+      line-height: 1;
+      margin-right: 2px;
+    }
+  }
+
+  &__item--box {
+    max-width: 165px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+}
+
+.brands {
+  margin-bottom: 72px;
+
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &-item {
+      width: 80px;
+      height: 60px;
+      background-repeat: no-repeat;
+      background-size: auto;
+      background-position: center;
+      opacity: 0.7;
+      transition: opacity 0.5s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.news {
+  margin-bottom: 72px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    .title {
+      margin-bottom: 0;
+    }
+
+    &-link {
+      @extend %OpenSans-700;
+      font-size: 14px;
+      color: $accent;
+      text-transform: uppercase;
+      padding-bottom: 2px;
+      border-bottom: 2px solid $accent;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between
+  }
+
+  &__item {
+    max-width: 410px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+
+    &:hover &-text {
+      color: $accent;
+    }
+
+    &-link {
+      display: block;
+      max-width: 410px;
+      width: 100%;
+      height: 240px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto;
+    }
+
+    &-date {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 18px 15px 10px 14px;
+      background-color: $white;
+      border-radius: 0px 0px 4px 4px;
+      @extend %OpenSans-700;
+      font-size: 10px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    &-day {
+      @extend %Ruda-400;
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    &-text {
+      padding: 18px;
+      @extend %OpenSans-600;
+      line-height: 1.5;
+      transition: color 0.5s;
     }
   }
 }
