@@ -21,3 +21,11 @@
     height: $lh * $n;
   }
 }
+
+
+
+@mixin max-w($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

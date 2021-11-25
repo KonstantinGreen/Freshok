@@ -10,12 +10,19 @@
 .logo {
   display: inline-block;
   margin-right: 24px;
+  max-width: 200px;
+  width: 100%;
+
+  &__img {
+    object-fit: contain;
+  }
 }
 
 .header {
   &__top {
     font-weight: 700;
-    background-color: #31352B;
+    background-color: $dark-800;
+    padding: 15px 0 12px;
   }
 
 
@@ -26,7 +33,6 @@
     color: $white;
     text-transform: uppercase;
     font-size: 13px;
-    line-height: 18px;
     font-weight: 700;
   }
 
@@ -55,173 +61,240 @@
     display: flex;
     align-items: center;
   }
+}
 
-  .block-info {
+
+.header-menu {
+  display: flex;
+
+  @include max-w($md) {
+    display: none;
+  }
+
+  &__item {
+    margin-right: 24px;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+}
+
+.drop {
+  position: relative;
+  max-width: 240px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  z-index: 5;
+  margin-right: 30px;
+
+  &--md {
+    @include max-w($md) {
+      display: none;
+    }
+  }
+
+  @include max-w($lg) {
+    max-width: 220px;
+  }
+
+  @include max-w($md) {
+    max-width: 350px;
+    margin-bottom: 4px;
+  }
+
+  &__btn {
+    width: 240px;
+    background-color: $white;
+    padding: 18px 22px 18px 61px;
+    font-weight: 600;
+    line-height: 1;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $green-900;
+    letter-spacing: 0.03em;
+    border-radius: 6px;
+    transition: background-color 0.5s, color 0.5s;
+    outline: 0;
 
-    &__item {
-      margin-right: 24px;
+    @include max-w($lg) {
+      width: 220px;
+      padding: 18px 14px 18px 50px;
     }
 
-    &__item:last-child {
-      margin-right: 0;
-    }
-  }
-
-  .drop {
-    position: relative;
-    max-width: 240px;
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    z-index: 5;
-    margin-right: 30px;
-
-    &__list-btn {
-      width: 240px;
-      background-color: $white;
-      padding: 18px 22px 18px 61px;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 1;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: $green-900;
-      letter-spacing: 0.03em;
-      border-radius: 6px;
-      transition: background-color 0.5s, color 0.5s;
-      outline: 0;
-
-      &:focus {
-        box-shadow: 0 0 0 4px $green-200;
-      }
-
-      &:hover {
-        background-color: $green-200;
-      }
-
-      &::before {
-        position: absolute;
-        content: '';
-        top: 47%;
-        left: 32px;
-        background-image: url(../images/icons/nav-line.svg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 25px;
-        height: 17px;
-        transform: translate(-50%, -50%);
-      }
+    @include max-w($md) {
+      color: $dark-800;
+      border-radius: 0;
+      max-width: 350px;
+      width: 100%;
+      font-size: 18px;
+      padding: 18px 14px 18px 61px;
     }
 
-    &__list-btn--active {
+    &:focus {
+      box-shadow: 0 0 0 4px $green-200;
+    }
+
+    &:hover {
       background-color: $green-200;
-      border-radius: 6px 6px 0 0;
     }
-
-    &__list-svg {
-      width: 8px;
-      height: 7px;
-      transition: transform 0.5s;
-    }
-
-    &__list-link {
-      display: block;
-      color: $dark-900;
-      background-color: $white;
-      padding: 13px 12px 12px 37px;
-      font-size: 16px;
-      line-height: 1.2;
-      font-weight: 400;
-      text-decoration: none;
-      border: 3px solid transparent;
-      text-align: left;
-      transition: color 0.5s, border 0.5s;
-
-      &:hover {
-        color: $green-900;
-        border-left-color: $green-900;
-      }
-
-      &:active {
-        color: $silver;
-      }
-
-      &:focus {
-        border-color: $green-200;
-        outline: 0;
-      }
-    }
-
-    &__submenu-item {
-      border: 1px solid #EBEBEB;
-
-      &:last-child {
-        border-radius: 0 0 6px 6px;
-      }
-    }
-  }
-
-
-  // По-другому у меня не получилось заставить ее двигаться при активе и обратно ↓
-
-  .drop__list-btn--active {
-    .drop__list-svg {
-      transform: rotate(180deg);
-    }
-  }
-
-  .form-search {
-    position: relative;
-    max-width: 575px;
-    width: 100%;
-    z-index: 5;
-    margin-right: 48px;
 
     &::before {
       position: absolute;
       content: '';
-      left: 13px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 3;
-      background-image: url(../images/icons/search.svg);
-      width: 20px;
-      height: 20px;
-      pointer-events: none;
+      top: 47%;
+      left: 32px;
+      background-image: url(../images/icons/nav-line.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 25px;
+      height: 17px;
+      transform: translate(-50%, -50%);
+
+      @include max-w($lg) {
+        left: 24px;
+      }
+
+      @include max-w($md) {
+        background-image: url(../images/icons/nav-iconblack.svg);
+        top: 54%;
+        left: 30px;
+      }
+
     }
 
-    &__input {
-      width: 100%;
-      height: 50px;
-      padding: 15px 165px 15px 52px;
-      border: 1px solid transparent;
-      border-radius: 6px;
-      outline: 0;
+    &--active {
+      background-color: $green-200;
+      border-radius: 6px 6px 0 0;
 
-      &::placeholder {
-        font-weight: 400;
-        letter-spacing: 0.03em;
+      .drop__svg {
+        transform: rotate(180deg);
+      }
+
+      @include max-w($md) {
+        border-radius: 0;
       }
     }
-
   }
 
-  .user-nav {
-    display: flex;
+  &__svg {
+    width: 8px;
+    height: 7px;
+    transition: transform 0.5s;
+  }
 
-    &__item {
-      margin-right: 21px;
+  &__link {
+    display: block;
+    color: $dark-900;
+    background-color: $white;
+    padding: 13px 12px 12px 37px;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-decoration: none;
+    border: 3px solid transparent;
+    text-align: left;
+    transition: color 0.5s, border 0.5s;
+
+
+    &:focus {
+      border-color: $green-200;
+      outline: 0;
     }
 
-    &__item:last-child {
-      margin-right: 0;
+    &:hover {
+      color: $green-900;
+      border-left-color: $green-900;
+    }
+
+    &:active {
+      color: $silver;
+    }
+  }
+
+  &__submenu {
+    @include max-w($md) {
+      height: 500px;
+      overflow-y: scroll;
+    }
+  }
+
+  &__item {
+    border: 1px solid $silver-100;
+
+    &:last-child {
+      border-radius: 0 0 6px 6px;
+    }
+  }
+}
+
+.form-search {
+  position: relative;
+  display: flex;
+  max-width: 575px;
+  width: 100%;
+  z-index: 5;
+  margin-right: 48px;
+
+  @include max-w($lg) {
+    margin-right: 20px;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background-image: url(../images/icons/search.svg);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+
+  &__input {
+    width: 100%;
+    height: 50px;
+    padding: 15px 165px 15px 52px;
+    border: 1px solid transparent;
+    border-radius: 6px 0 0 6px;
+    outline: 0;
+
+    @include max-w($lg) {
+      padding: 14px 20px 15px 41px;
+    }
+
+
+    &::placeholder {
+      font-weight: 400;
+      letter-spacing: 0.03em;
     }
   }
 
 }
+
+.user-nav {
+  display: flex;
+
+  &__item {
+    margin-right: 21px;
+
+    @include max-w($md) {
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+}
+
 
 
 .slider-main {
@@ -245,13 +318,17 @@
     width: 100%;
     min-height: 315px;
     padding: 24px 24px 24px 22px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba($white, 0.8);
     border: 1px solid transparent;
     border-radius: 6px 6px;
+
+    @include max-w($lg) {
+      padding: 24px 24px 24px 79px;
+    }
   }
 
   &__title {
-    font-family: 'Ruda';
+    font-family: 'Ruda', sans-serif;
     font-size: 60px;
     line-height: 1.3;
     font-weight: 900;
@@ -263,7 +340,9 @@
   }
 
   &__subtitle {
-    font-family: 'Ruda';
+    display: block;
+    max-width: 750px;
+    font-family: 'Ruda', sans-serif;
     font-weight: 900;
     line-height: 1.3;
     font-size: 60px;
@@ -271,7 +350,7 @@
     letter-spacing: 0;
     text-transform: uppercase;
     margin-bottom: 12px;
-    @include truncate(1, 1.3);
+    @include truncate(2, 1.3);
   }
 
   &__descr {
@@ -279,20 +358,17 @@
     max-width: 900px;
     font-size: 16px;
     color: $dark-500;
-    margin-bottom: 32px;
-
-    p {
-      @include truncate(2, 1.4);
-    }
+    margin-bottom: 40px;
+    @include truncate(2, 1.4);
   }
 
-  .slider__arrow-main {
+  &__arrowsvg {
     width: 19px;
     height: 32px;
     transition: fill 0.4s;
   }
 
-  .slick-arrow {
+  &__arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -315,22 +391,25 @@
     &:active {
       fill: $green-900;
     }
+
+    &--prev {
+      left: 60px;
+
+      @include max-w($lg) {
+        left: 20px;
+      }
+    }
+
+    &--next {
+      right: 60px;
+    }
   }
 
-  .slick-arrow.slick-disabled {
-    display: none !important;
-  }
-
-  .slick-prev {
-    left: 60px;
-  }
-
-  .slick-next {
-    right: 60px;
+  // По-другому не смог найти способ как сделать стрелку disabled
+  .slick-disabled {
+    fill: $silver;
   }
 }
-
-
 
 .advantages {
   background-color: $silver-100;
@@ -343,36 +422,29 @@
   }
 
   &__item {
-    display: flex;
     margin-right: 65px;
     background-repeat: no-repeat;
     background-size: auto auto;
     background-position: left top;
     max-width: 264px;
     width: 100%;
+    padding-left: 74px;
 
     &:last-child {
       margin-right: 0;
     }
   }
 
-  &__svg {
-    width: 50px;
-    height: 50px;
-    margin-right: 24px;
-    fill: $green-900;
-  }
-
   &__function {
-    display: block;
     font-weight: 600;
     font-size: 16px;
-    margin-bottom: 6px;
+    margin-bottom: 7px;
+    @include truncate(2, 1.4);
   }
 
   &__descr {
+    display: block;
     font-weight: 400;
-    font-size: 14px;
     display: block;
     font-weight: 400;
     color: $dark-500;
@@ -382,9 +454,9 @@
 
 }
 
-
 .filter-mix {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   font-weight: 700;
   font-size: 15px;
@@ -411,14 +483,13 @@
       box-shadow: 0 0 0 3px $green-200;
     }
 
-    &:active {
-      color: $dark-900;
-    }
-
     &:hover {
       color: $green-900;
     }
 
+    &:active {
+      color: $dark-900;
+    }
   }
 
   .mixitup-control-active {
@@ -432,24 +503,23 @@
   margin-bottom: 72px;
 
   &__list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
-    margin-bottom: 43px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    justify-content: center;
   }
 
   &__item {
-    max-width: 300px;
-    height: 409px;
+    margin: 0 15px 30px;
   }
 }
 
 .product-card {
+  width: 300px;
   position: relative;
-  border: 1px solid rgba(17, 17, 17, 0.2);
+  border: 1px solid rgba($dark-900, 0.2);
   border-radius: 6px;
   transition: color 0.3s;
-  height: 410px;
 
   &:hover {
     border-color: $green-900;
@@ -460,6 +530,11 @@
     padding: 12px 12px 7px;
     justify-content: space-between;
     height: 60px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
   }
 
   &__btn {
@@ -491,20 +566,34 @@
     transition: fill 0.5s;
   }
 
+  &__img {
+    object-fit: contain;
+  }
+
   &__link {
     position: relative;
     display: block;
-    transition: background-color 0.5s, box-shadow 0.5s;
-
-    &:hover {
-      background-color: rgba($dark-900, 0.1);
-      box-shadow: 0 4px 4px rgba($dark-900, 0.25);
-    }
+    transition: background-color 2.5s, box-shadow 0.5s;
 
     &:hover::before {
       opacity: 1;
     }
 
+
+    &:hover::after {
+      background-color: rgba($dark-900, 0.1);
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: background-color 0.5s;
+    }
 
     &::before {
       position: absolute;
@@ -542,22 +631,35 @@
     margin-bottom: 4px;
   }
 
-  &__basket {
+  &__buy {
     position: absolute;
-    right: 18px;
-    bottom: 18px
+    bottom: 24px;
+    right: 24px;
   }
-
-  &__counter {
-    position: absolute;
-    right: 74px;
-    bottom: 22px;
-  }
-
 }
 
 .pricing {
   position: relative;
+  font-weight: 400;
+
+  &--promo {
+    display: flex;
+    align-items: flex-end;
+
+    .pricing__newprice {
+      margin-right: 12px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1;
+      color: $dark-500;
+    }
+
+    .pricing__oldprice {
+      font-size: 12px;
+      line-height: 1;
+      order: 2;
+    }
+  }
 
   &__newprice {
     display: block;
@@ -567,8 +669,6 @@
   &__oldprice {
     position: relative;
     color: $silver;
-
-
 
     &::before {
       position: absolute;
@@ -583,8 +683,6 @@
   }
 }
 
-
-
 .basket {
   background-color: $green-900;
   display: flex;
@@ -596,12 +694,12 @@
   outline: 0;
   transition: background-color 0.4s, box-shadow 0.4s;
 
-  &:hover {
-    background-color: $green-dark;
-  }
-
   &:focus {
     box-shadow: 0 0 0 4px $green-200;
+  }
+
+  &:hover {
+    background-color: $green-dark;
   }
 
   &:active {
@@ -622,7 +720,7 @@
 
 
 .footer {
-  padding: 30px 0 24px;
+  padding: 30px 0 0;
   background-color: $dark-800;
 
   &__top {
@@ -633,12 +731,13 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 25px;
   }
 
   &__bottom {
     position: relative;
-    padding: 29px 0 0 0;
+    padding: 21px 0 29px 0;
 
     &:before {
       position: absolute;
@@ -659,7 +758,6 @@
 
   &__copy {
     font-weight: 400;
-    font-size: 14px;
     color: $white;
     text-transform: uppercase;
   }
@@ -668,54 +766,53 @@
 
 .payment {
   display: flex;
+  height: 29px;
 
   &__item {
-    position: relative;
+    margin-right: 24px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 
-    &::before {
-      content: '';
-      position: absolute;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      top: 0;
-      transform: translate(-50%, -50%);
-      height: 29px;
+    &:last-child {
+      margin-right: 0;
     }
 
     &--visa {
-      &::before {
-        right: 26px;
-        background-image: url(../images/icons/visa.svg);
-        width: 94px;
-      }
+      width: 93px;
+      background-image: url(../images/icons/visa.svg);
     }
 
     &--mc {
-      &::before {
-        right: -26px;
-        background-image: url(../images/icons/mc.svg);
-        width: 49px;
-      }
+      background-image: url(../images/icons/mc.svg);
+      width: 49px;
+
     }
   }
 }
 
+
+.subscribe {
+  &__text {
+    line-height: 1;
+    font-weight: 400;
+    color: $white;
+    margin-bottom: 18px;
+  }
+}
+
 .subscribe-form {
+  display: flex;
   max-width: 306px;
   width: 100%;
   position: relative;
   z-index: 5;
   outline: 0;
   border: 1px solid transparent;
+  margin-right: 73px;
 
-  &__label {
-    display: block;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1;
-    color: $white;
-    margin-bottom: 18px;
+  @include max-w($lg) {
+    max-width: 262px;
   }
 
   &__input {
@@ -724,6 +821,10 @@
     padding: 12px;
     border-radius: 6px 0 0 6px;
     border: 1px solid transparent;
+
+    @include max-w($lg) {
+      max-width: 142px;
+    }
 
     &::placeholder {
       font-weight: 400;
@@ -734,28 +835,43 @@
 }
 
 .footer-menu {
-  height: 96px;
-  width: 100%;
-  max-width: 467px;
-  width: 100%;
+
+  @include max-w($lg) {
+    max-width: 560px;
+  }
 
   &__list {
-    display: grid;
-    grid-template-columns: 137px 136px 64px;
-    grid-gap: 18px 67px;
+    column-count: 3;
+    column-gap: 75px;
+
+    @include max-w($lg) {
+      grid-gap: 25px 67px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 18px;
   }
 
   &__link {
+    position: relative;
     font-weight: 400;
-    font-size: 14px;
-    padding: 14px 4px 13px;
     color: $white;
     outline: 0;
     border-radius: 6px;
     transition: box-shadow 0.5s, color 0.4s, opacity 0.4s;
 
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      right: 0;
+      top: -50%;
+      padding: 22px
+    }
+
     &:focus {
-      background-color: rgba($dark-900, 0.0001);
+      background-color: rgba($dark-900, 0.1);
       box-shadow: 0 0 0 3px $green-100;
     }
 
@@ -771,7 +887,6 @@
 
 .contacts {
   font-weight: 400;
-  font-size: 14px;
   max-width: 214px;
   width: 100%;
 
@@ -799,9 +914,8 @@
       top: -50%;
     }
 
-
     &:focus {
-      background-color: rgba($dark-900, 0.0001);
+      background-color: rgba($dark-900, 0.1);
       box-shadow: 0 0 0 3px $green-100;
     }
 
@@ -824,18 +938,18 @@
   display: flex;
 
   &__link {
-    padding: 3px 7px 4px 5px;
+    padding: 4px 7px 4px 5px;
     display: block;
     transition: box-shadow 0.5s, opacity 0.5s;
     outline: 0;
 
-    &:hover {
-      opacity: 0.7;
-    }
-
     &:focus {
       box-shadow: 0 0 0 3px $green-200;
       border-radius: 3px;
+    }
+
+    &:hover {
+      opacity: 0.7;
     }
 
     &:active {
@@ -847,17 +961,18 @@
     width: 32px;
     height: 32px;
     transition: opacity 0.5s;
+    fill: $white;
   }
 
 }
 
 .banners {
-  margin-bottom: 72px;
+  margin-bottom: 42px;
 
   &__list {
-    display: grid;
-    grid-template-columns: 630px 300px 300px;
-    grid-column-gap: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   &__item {
@@ -867,14 +982,34 @@
     background-position: center;
     background-size: cover;
     color: $dark-500;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 15px 30px 15px;
+
+    &--white {
+      max-width: 630px;
+
+      .banners__info {
+        color: $white;
+      }
+
+      .banners__text {
+        max-width: 346px;
+      }
+
+      .banners__link {
+        transition: color 0.5s, border-color 0.5s;
+        border-color: $white;
+
+        &:hover {
+          border-color: $green-900;
+        }
+      }
+    }
   }
 
   &__info {
     padding: 76px 0 0 32px;
-  }
-
-  &__info--white {
-    color: $white;
   }
 
   &__title {
@@ -886,48 +1021,44 @@
     margin-bottom: 18px;
   }
 
-
   &__text {
-    font-family: 'Ruda';
+    font-family: 'Ruda', sans-serif;
     font-weight: 600;
     font-size: 30px;
     max-width: 160px;
     text-transform: uppercase;
     margin-bottom: 12px;
     @include truncate(2, 1.4);
-  }
 
-  &__info--white &__text {
-    max-width: 346px;
+    @include max-w($lg) {
+      font-size: 25px;
+    }
   }
 
   &__link {
+    position: relative;
     font-weight: 700;
-    font-size: 14px;
     line-height: 1;
     text-transform: uppercase;
     padding-bottom: 4px;
     border-bottom: 2px solid $dark-500;
     transition: color 0.5s, border-color 0.5s;
 
+    &::before {
+      position: absolute;
+      content: '';
+      left: 0;
+      right: 0;
+      top: -50%;
+      padding: 22px 0;
+    }
+
     &:hover {
       border-color: $green-900;
       color: $dark-900;
     }
   }
-
-  &__info--white &__link {
-    transition: color 0.5s, border-color 0.5s;
-    border-color: $white;
-
-    &:hover {
-      border-color: $green-900;
-    }
-  }
-
-
 }
-
 
 .promo {
   padding: 72px 0;
@@ -936,18 +1067,19 @@
   background-color: $silver-100;
 
   &__list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
-    margin-bottom: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
   }
 
   &__item {
-    width: 100%;
+    margin: 0 15px 30px;
   }
 }
 
 .card-promo {
+  width: 300px;
 
   &__link {
     background-color: $white;
@@ -961,18 +1093,17 @@
     text-align: left;
     padding: 12px 13px;
     display: flex;
+    transition: border-color 0.5s;
+
+    &:hover {
+      border-color: $green-900;
+    }
   }
 
   &__box {
     position: relative;
     width: 100px;
     margin-right: 12px;
-  }
-
-  .badge {
-    display: inline-block;
-    position: relative;
-    z-index: 5;
   }
 
   &__img {
@@ -990,7 +1121,7 @@
   }
 
   &__title {
-    font-size: 14px;
+    font-weight: 600;
     line-height: 1;
     @include truncate(3, 1.4);
   }
@@ -1002,11 +1133,11 @@
     margin-bottom: 5px;
     text-transform: uppercase;
 
-    &--ends {
+    &--red {
       color: $red;
     }
 
-    &--notavailable {
+    &--gray {
       color: $silver;
     }
   }
@@ -1016,44 +1147,27 @@
     right: 14px;
     bottom: 12px;
   }
-
-  .pricing {
-    display: flex;
-    align-items: flex-end;
-
-    &__newprice {
-      margin-right: 12px;
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 1;
-      color: $dark-500;
-
-
-    }
-
-    &__oldprice {
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 1;
-      order: 2;
-    }
-  }
-
-
-
 }
 
 .brands {
-  margin-bottom: 72px;
+  margin-bottom: 64px;
+  overflow-x: hidden;
+}
 
-  &__list {
+.brands-slider {
+
+  &__inner {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
   }
 
-  &__svg {
-    width: 80px;
-    height: 60px;
+  &__item {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  &__img {
     opacity: 0.5;
     transition: opacity 0.5s;
 
@@ -1062,11 +1176,16 @@
     }
   }
 
+  .slick-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
 
-
 .news {
-  margin-bottom: 72px;
+  margin-bottom: 42px;
 
   &__top {
     display: flex;
@@ -1075,19 +1194,29 @@
     margin-bottom: 30px;
   }
 
-  .title {
+  &__top-title {
     margin-bottom: 0;
   }
 
   &__top-link {
+    position: relative;
     font-weight: 700;
-    font-size: 14px;
+    line-height: 1.3;
     color: $green-900;
     text-transform: uppercase;
     padding-bottom: 2px;
     border-bottom: 2px solid $green-900;
     outline: 0;
     transition: box-shadow 0.5s, color 0.5s, border-color 0.5s;
+
+    &::before {
+      position: absolute;
+      content: '';
+      padding: 22px 0;
+      left: 0;
+      right: 0;
+      top: -50%;
+    }
 
     &:focus {
       box-shadow: 0 0 0 3px $green-200;
@@ -1099,20 +1228,33 @@
       color: $green-dark;
       border-color: $green-dark;
     }
+
+    &:active {
+      border-color: $green-200;
+    }
   }
 
   &__list {
     display: flex;
-    justify-content: space-between
   }
 
   &__item {
-    max-width: 410px;
-    width: 100%;
     position: relative;
     box-shadow: 0 3px 3px rgba($dark-900, 0.25);
     border-radius: 6px;
-    height: 348px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.news-cart {
+
+  &__img {
+    border-radius: 6px 6px 0 0;
   }
 
   &__link {
@@ -1125,8 +1267,10 @@
     background-position: center top;
     background-size: auto;
 
-    &:hover .news__text {
-      color: $green-900;
+    &:hover {
+      .news-cart__title {
+        color: $green-900;
+      }
     }
 
   }
@@ -1150,20 +1294,18 @@
   }
 
   &__day {
-    font-family: 'Ruda';
+    font-family: 'Ruda', sans-serif;
     font-weight: 400;
     font-size: 30px;
     line-height: 1;
   }
 
-  &__text {
+  &__title {
+    font-weight: 600;
     padding: 18px 18px 0 18px;
     font-size: 16px;
     line-height: 1.5;
     transition: color 0.5s;
     @include truncate(3, 1.5);
   }
-
 }
-
-@import 'media';

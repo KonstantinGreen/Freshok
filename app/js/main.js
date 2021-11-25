@@ -5,22 +5,22 @@ $(function () {
   });
 
 
-
-  $('.drop__list-item ul').hide();
-  $(".drop__list-item button").click(function () {
-    $(".drop__list-btn").toggleClass("drop__list-btn--active");
-    $(this).parent(".drop__list-item").children("ul").slideToggle("200");
+  $('.drop__submenu').hide();
+  $(".drop__btn").click(function () {
+    $(".drop__btn").toggleClass("drop__btn--active");
+    $(".drop__submenu").slideToggle("200");
   });
+
 
 
   $('.slider-main').slick({
     infinite: false,
-    prevArrow: '<button type="button" class="slick-prev"><svg class="slider__arrow-main"><use xlink:href="images/sprite.svg#arrow-left"></use></svg></button>',
-    nextArrow: '<button type="button" class="slick-next"><svg class="slider__arrow-main"><use xlink:href="images/sprite.svg#arrow-right"></use></svg></button>'
+    prevArrow: '<button type="button" class="slider-main__arrow slider-main__arrow--prev"><svg class="slider-main__arrowsvg"><use xlink:href="images/sprite.svg#arrow-left"></use></svg></button>',
+    nextArrow: '<button type="button" class="slider-main__arrow slider-main__arrow--next"><svg class="slider-main__arrowsvg"><use xlink:href="images/sprite.svg#arrow-right"></use></svg></button>'
   });
 
 
-  $('.counter-block__box span').click(function () {
+  $('.counter-block__box button').click(function () {
     var max_count = 99;
     var $input = $(this).parents('.counter-block').find('input.counter-block__num');
     if ($(this).hasClass('counter-block__minus')) {
@@ -47,14 +47,42 @@ $(function () {
 
 
 
+  $('.burger').on('click', function () {
+    $('.rightside-menu').removeClass('rightside-menu--close');
+  });
+  $('.rightside-menu__close').on('click', function () {
+    $('.rightside-menu').addClass('rightside-menu--close');
+  });
 
 
-
-
-
-
-
-
+  $('.brands-slider__inner').slick({
+    slidesToShow: 6,
+    infinite: true,
+    autoplay: false,
+    arrows: false,
+    responsive: [{
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      }
+    ]
+  });
 
 
 
