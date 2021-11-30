@@ -16,29 +16,29 @@ $(function () {
   $('.slider-main').slick({
     infinite: false,
     prevArrow: '<button type="button" class="slider-main__arrow slider-main__arrow--prev"><svg class="slider-main__arrowsvg"><use xlink:href="images/sprite.svg#arrow-left"></use></svg></button>',
-    nextArrow: '<button type="button" class="slider-main__arrow slider-main__arrow--next"><svg class="slider-main__arrowsvg"><use xlink:href="images/sprite.svg#arrow-right"></use></svg></button>'
+    nextArrow: '<button type="button" class="slider-main__arrow slider-main__arrow--next"><svg class="slider-main__arrowsvg"><use xlink:href="images/sprite.svg#arrow-right"></use></svg></button>',
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        arrows: false,
+        dots: true,
+        autoplay: true
+      }
+    }, ]
   });
 
 
   $('.counter-block__box button').click(function () {
     var max_count = 99;
     var $input = $(this).parents('.counter-block').find('input.counter-block__num');
-    if ($(this).hasClass('counter-block__minus')) {
+    if ($(this).hasClass('counter-block__btn--minus')) {
       var count = parseFloat($input.val()) - 1;
       count = count < 1 ? 1 : count;
-      if (count < 2) {
-        $(this).addClass('dis');
-      } else {
-        $(this).removeClass('dis');
-      }
       $input.val(count);
     } else {
       var count = parseFloat($input.val()) + 1
       count = count > max_count ? max_count : count;
       $input.val(count);
-      if (count > 1) {
-        $(this).parents('.counter-block').find(('.counter-block__minus')).removeClass('dis');
-      }
     }
 
     $input.change();
@@ -78,12 +78,34 @@ $(function () {
         breakpoint: 480,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToScroll: 2,
+          autoplay: true
+
         }
       }
     ]
   });
 
+  if (window.innerWidth < 769) {
+    $('.form-search').hide();
+    $(".general-btn--search").click(function () {
+      $(".form-search").toggleClass(".form-search--active");
+      $(".form-search").slideToggle("200");
+    });
+  }
+
+
+  var cur_width = $(window).width();
+
+  $(window).resize(function () {
+    if ($(window).width() <= 768 && cur_width > 768) {
+      //reload
+      location.reload();
+    } else if ($(window).width() > 768 && cur_width <= 768) {
+      //reload
+      location.reload();
+    }
+  });
 
 
   var containerEl1 = document.querySelector('[data-ref="container-1"]');

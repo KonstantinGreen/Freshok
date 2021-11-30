@@ -13,8 +13,19 @@
   max-width: 200px;
   width: 100%;
 
+  @include max-w($sm) {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
   &__img {
     object-fit: contain;
+
+    &--footer {
+      @include max-w($sm) {
+        margin: 0 auto;
+      }
+    }
   }
 }
 
@@ -22,7 +33,7 @@
   &__top {
     font-weight: 700;
     background-color: $dark-800;
-    padding: 15px 0 12px;
+    padding: 16px 0 12px;
   }
 
 
@@ -46,25 +57,42 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-  }
 
-  &__info-item:last-child {
-    margin-right: 0;
+    @include max-w($xs) {
+      margin-right: 12px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      @include max-w($xs) {
+        margin-right: -6px;
+      }
+    }
   }
 
   &__content {
     background-color: $green-900;
     padding: 25px 0;
+
+    @include max-w($md) {
+      padding: 9px 0;
+      position: relative;
+    }
   }
 
   &__content-wrapper {
     display: flex;
     align-items: center;
+
+    @include max-w($sm) {
+      justify-content: space-between;
+    }
   }
 }
 
 
-.header-menu {
+.menu {
   display: flex;
 
   @include max-w($md) {
@@ -73,11 +101,12 @@
 
   &__item {
     margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
-  &__item:last-child {
-    margin-right: 0;
-  }
 }
 
 .drop {
@@ -243,6 +272,24 @@
     margin-right: 20px;
   }
 
+  @include max-w($md) {
+    margin-right: 28px;
+    border: 1px solid $dark-900;
+  }
+
+  @include max-w($sm) {
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    left: 0;
+    top: 78px;
+    margin-right: 0;
+  }
+
+  @include max-w($xs) {
+    top: 61px;
+  }
+
   &::before {
     position: absolute;
     content: '';
@@ -268,6 +315,10 @@
       padding: 14px 20px 15px 41px;
     }
 
+    @include max-w($md) {
+      border-radius: 0;
+    }
+
 
     &::placeholder {
       font-weight: 400;
@@ -279,19 +330,57 @@
 
 .user-nav {
   display: flex;
+  justify-content: space-between;
+  max-width: 172px;
+  width: 100%;
+
+  @include max-w($md) {
+    justify-content: space-around;
+    max-width: 135px;
+  }
+
+  @include max-w($sm) {
+    max-width: 124px;
+    width: 100%;
+  }
+
+  @include max-w($xs) {
+    margin-right: 12px;
+    justify-content: center;
+    max-width: 73px;
+  }
+
 
   &__item {
     margin-right: 21px;
 
+    @include max-w($xs) {
+      margin-right: 6px;
+    }
+
+    &__item:last-child {
+      margin-right: 0;
+    }
+
+    &:first-child {
+      display: none;
+    }
+
     @include max-w($md) {
-      &:first-child {
+      &:nth-child(2) {
         display: none;
       }
     }
-  }
 
-  &__item:last-child {
-    margin-right: 0;
+    @include max-w($sm) {
+      &:nth-child(3) {
+        display: none;
+      }
+
+      &:first-child {
+        display: block;
+      }
+    }
   }
 }
 
@@ -300,7 +389,7 @@
 .slider-main {
   position: relative;
 
-  &__box {
+  &__bg {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -311,23 +400,58 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include max-w($sm) {
+      height: 450px;
+    }
+
+    @include max-w($xs) {
+      height: 320px;
+    }
   }
 
   &__info {
     position: relative;
     width: 100%;
-    min-height: 315px;
+    max-height: 315px;
     padding: 24px 24px 24px 22px;
-    background-color: rgba($white, 0.8);
-    border: 1px solid transparent;
-    border-radius: 6px 6px;
+    z-index: 4;
 
     @include max-w($lg) {
       padding: 24px 24px 24px 79px;
     }
+
+    @include max-w($sm) {
+      padding: 15px;
+    }
+
+    @include max-w($xs) {
+      max-height: 209px;
+      padding: 15px 15px 15px 0;
+    }
+
+
+    &:before {
+      position: absolute;
+      content: '';
+      background-color: rgba($white, 0.8);
+      width: 100%;
+      left: 0;
+      top: 0%;
+      bottom: 0;
+      border: 1px solid transparent;
+      border-radius: 6px 6px;
+
+      @include max-w($xs) {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+      }
+    }
   }
 
   &__title {
+    position: relative;
     font-family: 'Ruda', sans-serif;
     font-size: 60px;
     line-height: 1.3;
@@ -336,10 +460,27 @@
     color: $dark-500;
     text-transform: uppercase;
     letter-spacing: 0;
-    @include truncate(2, 1.3);
+    z-index: 5;
+    @include truncate(4, 1.3);
+
+    @include max-w($md) {
+      font-size: 50px;
+    }
+
+    @include max-w($sm) {
+      font-size: 35px;
+    }
+
+    @include max-w($xs) {
+      font-size: 20px;
+      margin-bottom: 15px;
+      @include truncate(3, 1.3);
+      font-weight: 600;
+    }
   }
 
   &__subtitle {
+    position: relative;
     display: block;
     max-width: 750px;
     font-family: 'Ruda', sans-serif;
@@ -350,16 +491,40 @@
     letter-spacing: 0;
     text-transform: uppercase;
     margin-bottom: 12px;
-    @include truncate(2, 1.3);
+    z-index: 5;
+
+    @include max-w($md) {
+      font-size: 50px;
+    }
+
+    @include max-w($sm) {
+      font-size: 35px;
+    }
+
+    @include max-w($xs) {
+      font-size: 20px;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
   }
 
   &__descr {
+    position: relative;
+    z-index: 5;
     font-weight: 400;
     max-width: 900px;
     font-size: 16px;
     color: $dark-500;
     margin-bottom: 40px;
     @include truncate(2, 1.4);
+
+    @include max-w($md) {
+      max-width: 500px;
+    }
+
+    @include max-w($xs) {
+      margin-bottom: 24px;
+    }
   }
 
   &__arrowsvg {
@@ -405,7 +570,37 @@
     }
   }
 
-  // По-другому не смог найти способ как сделать стрелку disabled
+  .slick-dots {
+    position: absolute;
+    display: flex;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    li {
+      margin-right: 12px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    button {
+      background-color: $white;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid $silver;
+      font-size: 0;
+      padding: 0;
+    }
+  }
+
+  .slick-active button {
+    background-color: $green-900;
+    border-color: $green-900;
+  }
+
   .slick-disabled {
     fill: $silver;
   }
@@ -416,9 +611,18 @@
   padding: 48px 0 23px;
   margin-bottom: 80px;
 
+  @include max-w($xs) {
+    padding: 30px 0;
+    margin-bottom: 48px;
+  }
+
   &__list {
     display: flex;
     justify-content: center;
+
+    @include max-w($sm) {
+      flex-wrap: wrap;
+    }
   }
 
   &__item {
@@ -429,6 +633,19 @@
     max-width: 264px;
     width: 100%;
     padding-left: 74px;
+
+    @include max-w($sm) {
+      margin-bottom: 30px;
+      margin-right: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include max-w($xs) {
+      max-width: 100%;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -445,11 +662,13 @@
   &__descr {
     display: block;
     font-weight: 400;
-    display: block;
-    font-weight: 400;
     color: $dark-500;
     max-width: 190px;
     @include truncate(2, 1.4);
+
+    @include max-w($sm) {
+      max-width: 100%;
+    }
   }
 
 }
@@ -464,11 +683,20 @@
   margin-bottom: 48px;
   letter-spacing: 0.03em;
 
+  @include max-w($xs) {
+    margin-bottom: 16px;
+  }
+
   &__item {
     margin-right: 16px;
 
     &:last-child {
       margin-right: 0;
+    }
+
+    @include max-w($sm) {
+      margin-right: 8px;
+      margin-bottom: 6px;
     }
   }
 
@@ -511,6 +739,14 @@
 
   &__item {
     margin: 0 15px 30px;
+
+    @include max-w($sm) {
+      margin: 0 10px 15px;
+    }
+
+    @include max-w($xs) {
+      margin: 0 2.5px 5px;
+    }
   }
 }
 
@@ -520,6 +756,14 @@
   border: 1px solid rgba($dark-900, 0.2);
   border-radius: 6px;
   transition: color 0.3s;
+
+  @include max-w($sm) {
+    max-width: 220px;
+  }
+
+  @include max-w($xs) {
+    max-width: 175px;
+  }
 
   &:hover {
     border-color: $green-900;
@@ -564,10 +808,20 @@
     height: 29px;
     fill: $silver;
     transition: fill 0.5s;
+
+    @include max-w($xs) {
+      width: 24px;
+      height: 21px;
+    }
   }
 
   &__img {
     object-fit: contain;
+
+    @include max-w($xs) {
+      width: 168px;
+      height: 126px;
+    }
   }
 
   &__link {
@@ -607,18 +861,28 @@
       background-image: url(../images/icons/search.svg);
       background-color: $white;
       background-repeat: no-repeat;
+      background-size: contain;
       background-position: center;
       width: 20px;
       height: 20px;
       transition: opacity 0.5s;
+
+      @include max-w($sm) {
+        background-size: auto;
+      }
     }
   }
 
   &__name {
+    font-size: 14px;
     letter-spacing: 0.03em;
     display: block;
     font-weight: 600;
     @include truncate(3, 1.4);
+
+    @include max-w($sm) {
+      @include truncate(2, 1.4);
+    }
   }
 
   &__bottom {
@@ -628,13 +892,27 @@
     padding: 12px 18px 18px 18px;
     text-align: left;
     height: 133px;
-    margin-bottom: 4px;
-  }
 
-  &__buy {
-    position: absolute;
-    bottom: 24px;
-    right: 24px;
+    @include max-w($sm) {
+      padding: 8px 12px 12px 12px;
+    }
+  }
+}
+
+.form-buy {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+
+  @include max-w($xs) {
+    bottom: 12px;
+    right: 12px;
+
+    .counter-block__box {
+      position: absolute;
+      bottom: 46px;
+      left: 13%;
+    }
   }
 }
 
@@ -725,7 +1003,12 @@
 
   &__top {
     margin-bottom: 25px;
+
+    @include max-w($sm) {
+      margin-bottom: 20px;
+    }
   }
+
 
   &__content {
     display: flex;
@@ -733,11 +1016,21 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 25px;
+
+    @include max-w($sm) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__bottom {
     position: relative;
     padding: 21px 0 29px 0;
+
+    @include max-w($sm) {
+      display: flex;
+    }
 
     &:before {
       position: absolute;
@@ -754,6 +1047,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include max-w($sm) {
+      flex-direction: column;
+    }
   }
 
   &__copy {
@@ -767,6 +1064,11 @@
 .payment {
   display: flex;
   height: 29px;
+
+  @include max-w($sm) {
+    margin-bottom: 24px;
+    order: -1;
+  }
 
   &__item {
     margin-right: 24px;
@@ -793,11 +1095,17 @@
 
 
 .subscribe {
+  @include max-w($sm) {
+    order: 2;
+  }
+
   &__text {
     line-height: 1;
     font-weight: 400;
     color: $white;
     margin-bottom: 18px;
+    max-width: 300px;
+    @include truncate(2, 1);
   }
 }
 
@@ -813,7 +1121,17 @@
 
   @include max-w($lg) {
     max-width: 262px;
+    margin-right: 25px;
   }
+
+  @include max-w($md) {
+    margin-right: 0;
+  }
+
+  @include max-w($sm) {
+    max-width: 300px;
+  }
+
 
   &__input {
     max-width: 180px;
@@ -826,6 +1144,11 @@
       max-width: 142px;
     }
 
+    @include max-w($sm) {
+      width: 100%;
+      max-width: 300px;
+    }
+
     &::placeholder {
       font-weight: 400;
       font-size: 14px;
@@ -835,6 +1158,26 @@
 }
 
 .footer-menu {
+  position: relative;
+
+  @include max-w($sm) {
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100vw;
+      left: 50%;
+      bottom: -10px;
+      height: 1px;
+      background-color: $white;
+      opacity: 0.1;
+      transform: translate(-50%);
+    }
+  }
+
+
+  @include max-w($sm) {
+    margin-bottom: 30px;
+  }
 
   @include max-w($lg) {
     max-width: 560px;
@@ -845,12 +1188,22 @@
     column-gap: 75px;
 
     @include max-w($lg) {
-      grid-gap: 25px 67px;
+      column-gap: 36px;
     }
+
+    @include max-w($sm) {
+      column-count: 2;
+      column-gap: 0;
+    }
+
   }
 
   &__item {
     margin-bottom: 18px;
+
+    @include max-w($sm) {
+      margin-left: 40px;
+    }
   }
 
   &__link {
@@ -890,6 +1243,25 @@
   max-width: 214px;
   width: 100%;
 
+  @include max-w($sm) {
+    order: -1;
+    padding-bottom: 18px;
+    margin-bottom: 24px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100vw;
+      left: 50%;
+      bottom: 0;
+      height: 1px;
+      background-color: $white;
+      opacity: 0.1;
+      transform: translate(-50%);
+    }
+  }
+
   &__info {
     margin-bottom: 14px;
   }
@@ -898,6 +1270,10 @@
     display: flex;
     margin-bottom: 18px;
     color: $white;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__link {
@@ -928,14 +1304,14 @@
     }
 
   }
-
-  &__item:last-child {
-    margin-bottom: 0;
-  }
 }
 
 .social {
   display: flex;
+
+  @include max-w($sm) {
+    justify-content: center;
+  }
 
   &__link {
     padding: 4px 7px 4px 5px;
@@ -986,6 +1362,15 @@
     width: 100%;
     margin: 0 15px 30px 15px;
 
+    @include max-w($sm) {
+      max-width: 630px;
+    }
+
+    @include max-w($xs) {
+      margin-bottom: 15px;
+    }
+
+
     &--white {
       max-width: 630px;
 
@@ -995,6 +1380,11 @@
 
       .banners__text {
         max-width: 346px;
+        @include truncate(3, 1.4);
+
+        @include max-w($xs) {
+          max-width: 260px;
+        }
       }
 
       .banners__link {
@@ -1010,6 +1400,11 @@
 
   &__info {
     padding: 76px 0 0 32px;
+
+
+    @include max-w($xs) {
+      padding: 76px 0 0 15px;
+    }
   }
 
   &__title {
@@ -1019,6 +1414,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 18px;
+    @include truncate(2, 1);
   }
 
   &__text {
@@ -1031,7 +1427,11 @@
     @include truncate(2, 1.4);
 
     @include max-w($lg) {
-      font-size: 25px;
+      font-size: 24px;
+    }
+
+    @include max-w($xs) {
+      margin-bottom: 72px;
     }
   }
 
@@ -1066,6 +1466,10 @@
   text-align: center;
   background-color: $silver-100;
 
+  @include max-w($xs) {
+    padding: 48px 0;
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -1075,6 +1479,10 @@
 
   &__item {
     margin: 0 15px 30px;
+
+    @include max-w($xs) {
+      margin: 0 15px 15px;
+    }
   }
 }
 
@@ -1089,7 +1497,6 @@
     border-radius: 6px;
     max-width: 300px;
     width: 100%;
-    height: 124px;
     text-align: left;
     padding: 12px 13px;
     display: flex;
@@ -1100,16 +1507,14 @@
     }
   }
 
+  &__badges {
+    position: absolute;
+  }
+
   &__box {
     position: relative;
     width: 100px;
     margin-right: 12px;
-  }
-
-  &__img {
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 
   &__info {
@@ -1121,6 +1526,8 @@
   }
 
   &__title {
+    font-size: 14px;
+    letter-spacing: 0.03em;
     font-weight: 600;
     line-height: 1;
     @include truncate(3, 1.4);
@@ -1162,12 +1569,13 @@
     align-items: center;
   }
 
-  &__item {
-    display: flex !important;
-    justify-content: center !important;
+  &__box {
+    display: flex;
+    justify-content: center;
   }
 
   &__img {
+    object-fit: contain;
     opacity: 0.5;
     transition: opacity 0.5s;
 
@@ -1192,10 +1600,20 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+
+    @include max-w($xs) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
   }
 
   &__top-title {
     margin-bottom: 0;
+
+    @include max-w($xs) {
+      margin-bottom: 12px;
+    }
   }
 
   &__top-link {
@@ -1236,6 +1654,11 @@
 
   &__list {
     display: flex;
+
+    @include max-w($lg) {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
   }
 
   &__item {
@@ -1245,16 +1668,38 @@
     margin-right: 30px;
     margin-bottom: 30px;
 
+    @include max-w($lg) {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    @include max-w($xs) {
+      margin: 0 00 15px;
+    }
+
     &:last-child {
       margin-right: 0;
+
+      @include max-w($lg) {
+        margin-right: 15px;
+      }
+
+      @include max-w($xs) {
+        margin: 0;
+      }
     }
   }
 }
 
-.news-cart {
+.news-card {
 
   &__img {
     border-radius: 6px 6px 0 0;
+
+    @include max-w($xs) {
+      width: 490px;
+      height: 200px;
+    }
   }
 
   &__link {
@@ -1262,13 +1707,18 @@
     flex-direction: column;
     max-width: 410px;
     width: 100%;
-    height: 348px;
+    max-height: 348px;
     background-repeat: no-repeat;
     background-position: center top;
     background-size: auto;
 
+    @include max-w($xs) {
+      max-width: 480px;
+      padding-bottom: 15px;
+    }
+
     &:hover {
-      .news-cart__title {
+      .news-card__title {
         color: $green-900;
       }
     }
@@ -1302,10 +1752,16 @@
 
   &__title {
     font-weight: 600;
-    padding: 18px 18px 0 18px;
+    padding: 18px;
     font-size: 16px;
     line-height: 1.5;
     transition: color 0.5s;
     @include truncate(3, 1.5);
+
+    @include max-w($xs) {
+      font-size: 14px;
+      padding: 15px 15px 0;
+      @include truncate(2, 1.4);
+    }
   }
 }
