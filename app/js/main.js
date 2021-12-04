@@ -12,6 +12,12 @@ $(function () {
   });
 
 
+  $(".jq-selectbox__select").click(function () {
+    $(".jq-selectbox__select").toggleClass("select-style--active");
+  });
+
+
+
 
   $('.slider-main__list').slick({
     infinite: false,

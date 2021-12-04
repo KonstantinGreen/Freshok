@@ -621,17 +621,39 @@
 
           </ul>
 
-
-
-
-
-
-
-
-
-
-
-          <div class="catalog-content"></div>
+          <div class="catalog-content">
+            <div class="filter-content">
+              <div class="filter-content-selects">
+                <form class="filter-content__filter-form" action="#">
+                  <select class="filter-content__select-sort select-style" id="filter-content__select-sort">
+                    <option value="По названию">По названию</option>
+                    <option value="По популярности">По популярности</option>
+                    <option value="Сначала дешевые">Сначала дешевые</option>
+                    <option value="Сначала дорогие">Сначала дорогие</option>
+                    <option value="По алфавиту">По алфавиту</option>
+                  </select>
+                  <select class="filter-content__select-show select-style">
+                    <option value="по 12">по 12</option>
+                    <option value="по 18">по 18</option>
+                    <option value="по 30">по 30</option>
+                    <option value="по 36">по 36</option>
+                  </select>
+                </form>
+              </div>
+              <div class="filter-content__buttons">
+                <button class="filter-content__btn">
+                  <svg class="filter-content__svg">
+                    <use xlink:href="images/sprite.svg#list"></use>
+                  </svg>
+                </button>
+                <button class="filter-content__btn filter-content__btn--active">
+                  <svg class="filter-content__svg">
+                    <use xlink:href="images/sprite.svg#grid"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
