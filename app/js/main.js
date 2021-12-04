@@ -13,7 +13,7 @@ $(function () {
 
 
 
-  $('.slider-main').slick({
+  $('.slider-main__list').slick({
     infinite: false,
     prevArrow: '<button type="button" class="slider-main__arrow slider-main__arrow--prev"><svg class="slider-main__arrowsvg"><use xlink:href="images/sprite.svg#arrow-left"></use></svg></button>',
     nextArrow: '<button type="button" class="slider-main__arrow slider-main__arrow--next"><svg class="slider-main__arrowsvg"><use xlink:href="images/sprite.svg#arrow-right"></use></svg></button>',
@@ -119,5 +119,124 @@ $(function () {
 
   var mixer1 = mixitup(containerEl1, config);
   var mixer2 = mixitup(containerEl2, config);
+
+});
+
+
+
+
+
+$("#filter-category-btn").click(function () {
+  $(".filter__btn").toggleClass("filter__btn--active");
+  $(".filter__submenu--category").slideToggle("200");
+});
+
+$("#filter-brands-btn").click(function () {
+  $(".filter__btn").toggleClass("filter__btn--active");
+  $(".filter__submenu--brands").slideToggle("200");
+});
+
+
+$("#filter-offer-btn").click(function () {
+  $(".filter__btn").toggleClass("filter__btn--active");
+  $(".filter__submenu--offer").slideToggle("200");
+});
+
+
+$("#filter-price-btn").click(function () {
+  $(".filter__btn").toggleClass("filter__btn--active");
+  $(".filter__submenu--price").slideToggle("200");
+});
+
+
+var Scrollbar = window.Scrollbar;
+
+var options = {
+  'damping': 0.05,
+  'alwaysShowTracks': false,
+}
+
+Scrollbar.init(document.querySelector('.filter__submenu'), options);
+Scrollbar.init(document.querySelector('.filter__submenu--offer'), options);
+Scrollbar.init(document.querySelector('.filter__submenu--brands'), options);
+Scrollbar.init(document.querySelector('.filter__submenu--price'), options);
+
+
+
+
+
+var $range = $(".filter-price__input");
+var $inputFrom = $("#filter-price__box-input-from");
+var $inputTo = $("#filter-price__box-input-to");
+var instance;
+var min = 0;
+var max = 10000000000;
+var from = 0;
+var to = 0;
+
+
+$range.ionRangeSlider({
+  skin: "round",
+  type: "double",
+  min: min,
+  max: max,
+  onStart: updateInputs,
+  onChange: updateInputs,
+  onFinish: updateInputs
+});
+
+instance = $range.data("ionRangeSlider");
+
+function updateInputs(data) {
+  from = data.from;
+  to = data.to;
+
+  $inputFrom.prop("value", from);
+  $inputTo.prop("value", to);
+}
+
+$inputFrom.on("change", function () {
+  var val = $(this).prop("value");
+
+  // validate
+  if (val < min) {
+    val = min;
+  } else if (val > to) {
+    val = to;
+  }
+
+  instance.update({
+    from: val
+  });
+
+  $(this).prop("value", val);
+
+});
+
+$inputTo.on("change", function () {
+  var val = $(this).prop("value");
+
+  // validate
+  if (val < from) {
+    val = from;
+  } else if (val > max) {
+    val = max;
+  }
+
+  instance.update({
+    to: val
+  });
+
+  $(this).prop("value", val);
+});
+
+
+$('.filter-content__btn').on('click', function () {
+  $('.filter-content__btn').removeClass('filter-content__btn--active');
+  $(this).addClass('filter-content__btn--active')
+});
+
+
+$('.select-style').styler({
 
 });

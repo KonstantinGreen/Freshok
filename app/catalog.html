@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ФрешОк онлайн-магазин / главная страница</title>
+  <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <nav class="header__nav">
+      <div class="header__top">
+        <div class="container">
+
+          <div class="header__top-wrapper">
+
+            <button class="burger" type="button">
+              <span class="burger__line"></span>
+              <span class="sr-only">открыть меню / закрыть меню</span>
+            </button>
+
+            <div class="rightside-menu rightside-menu--close">
+              <a class="logo" href="#">
+                <img class="logo__img" src="images/icons/logo-green.svg" alt="лого" width="200" height="60">
+              </a>
+
+              <button class="rightside-menu__close" type="button">
+                <svg class="rightside-menu__svg">
+                  <use xlink:href="images/sprite.svg#close-btn"></use>
+                </svg>
+              </button>
+
+              <div class="rightside-menu__authorization">
+                <a class="rigthside-menu__link rigthside-menu__link--authorization" href="#">Вход</a>
+                <span class="rightside-menu__span">|</span>
+                <a class="rigthside-menu__link rigthside-menu__link--authorization" href="#"> Регистрация</a>
+              </div>
+
+              <div class="drop">
+                <button class="drop__btn" href="#" type="button">
+                  Каталог товаров
+                </button>
+                <ul class="drop__submenu">
+                  <li class="drop__item">
+                    <a class="drop__link" href="#">
+                      Овощи и фрукты
+                    </a>
+                  </li>
+                  <li class="drop__item">
+                    <a class="drop__link" href="#">
+                      Бакалея
+                    </a>
+                  </li>
+                  <li class="drop__item">
+                    <a class="drop__link" href="#">
+                      Хлеб
+                    </a>
+                  </li>
+                  <li class="drop__item">
+                    <a class="drop__link" href="#">
+                      Мясо
+                    </a>
+                  </li>
+                  <li class="drop__item">
+                    <a class="drop__link" href="#">
+                      Колбаса
+                    </a>
+                  </li>
+                  <li class="drop__item">
+                    <a class="drop__link" href="#">
+                      Рыба
+                    </a>
+                  </li>
+                  <li class="drop__item">
+                    <a class="drop__link" href="#">
+                      Алкоголь
+                    </a>
+                  </li>
+                  <li class="drop__item">
+                    <a class="drop__link" href="#">
+                      Напитки
+                    </a>
+                  </li>
+                  <li class="drop__item">
+                    <a class="drop__link" href="#">
+                      Торты
+                    </a>
+                  </li>
+                  <li class="drop__item">
+                    <a class="drop__link" href="#">
+                      Мясо
+                    </a>
+                  </li>
+                  <li class="drop__item">
+                    <a class="drop__link" href="#">
+                      Чай, кофе
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="rightside-menu__contacts">
+                <address class="rightside-menu__info">
+                  <div class="rightside-menu__info-item rightside-menu__info-item--tel">
+                    <a class="rigthside-menu__link rigthside-menu__link--info" href="tel:+7907288365">+7 907
+                      288 365</a>
+                  </div>
+                  <div class="rightside-menu__info-item rightside-menu__info-item--location">
+                    Санкт-Петербург, ул. Ленина, 1
+                  </div>
+                </address>
+
+                <ul class="rightside-menu__social">
+                  <li class="rightside-menu__social-item">
+                    <a class="rigthside-menu__link rigthside-menu__link--social" href="#" target="_blank">
+                      <svg class="rightside-menu__social-svg">
+                        <use xlink:href="images/sprite.svg#facebook"></use>
+                      </svg>
+                      <span class="sr-only">Посмотреть facebook</span>
+                    </a>
+                  </li>
+                  <li class="rightside-menu__social-item">
+                    <a class="rigthside-menu__link rigthside-menu__link--social" href="#" target="_blank">
+                      <svg class="rightside-menu__social-svg">
+                        <use xlink:href="images/sprite.svg#youtube"></use>
+                      </svg>
+                      <span class="sr-only">Посмотреть youtube</span>
+                    </a>
+                  </li>
+                  <li class="rightside-menu__social-item">
+                    <a class="rigthside-menu__link rigthside-menu__link--social" href="#" target="_blank">
+                      <svg class="rightside-menu__social-svg">
+                        <use xlink:href="images/sprite.svg#telegram"></use>
+                      </svg>
+                      <span class="sr-only">Посмотреть telegram</span>
+                    </a>
+                  </li>
+                  <li class="rightside-menu__social-item">
+                    <a class="rigthside-menu__link rigthside-menu__link--social" href="#" target="_blank">
+                      <svg class="rightside-menu__social-svg">
+                        <use xlink:href="images/sprite.svg#instagram"></use>
+                      </svg>
+                      <span class="sr-only">Посмотреть instagram</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <nav class="rightside-menu__navigation">
+                <ul class="rightside-menu__navigation-list">
+                  <li class="rightside-menu__navigation-item">
+                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                      Доставка
+                    </a>
+                  </li>
+
+                  <li class="rightside-menu__navigation-item">
+                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                      О нас
+                    </a>
+                  </li>
+
+                  <li class="rightside-menu__navigation-item">
+                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                      Новости
+                    </a>
+                  </li>
+
+                  <li class="rightside-menu__navigation-item">
+                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                      Контакты
+                    </a>
+                  </li>
+
+                  <li class="rightside-menu__navigation-item">
+                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                      Акции
+                    </a>
+                  </li>
+
+                  <li class="rightside-menu__navigation-item">
+                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                      Вакансии
+                    </a>
+                  </li>
+
+                  <li class="rightside-menu__navigation-item">
+                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                      Отзывы
+                    </a>
+                  </li>
+
+                  <li class="rightside-menu__navigation-item">
+                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                      Публичная оферта
+                    </a>
+                  </li>
+
+
+
+                </ul>
+              </nav>
+
+            </div>
+
+            <ul class="header__info">
+              <li class="header__info-item">
+                <a class="link-services" href="#">
+                  <svg class="link-services__svg">
+                    <use xlink:href="images/sprite.svg#delivery"></use>
+                  </svg>
+                  <span class="link-services__text">
+                    адрес и время доставки
+                  </span>
+                </a>
+              </li>
+              <li class="header__info-item">
+                <a class="link-services" href="#">
+                  <svg class="link-services__svg">
+                    <use xlink:href="images/sprite.svg#tel"></use>
+                  </svg>
+                  <span class="link-services__text">
+                    горячая линия 24/7
+                  </span>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="menu">
+              <li class="menu__item">
+                <a class="link-services" href="#">
+                  доставка
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="link-services" href="#">
+                  о нас
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="link-services" href="#">
+                  новости
+                </a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="header__content">
+
+        <div class="container">
+          <div class="header__content-wrapper">
+
+            <a class="logo" href="#">
+              <picture class="logo__img">
+                <source srcset="images/icons/logo-mobile.svg" media="(max-width:480px)">
+                <img src="images/icons/logo.svg" alt="logo">
+              </picture>
+            </a>
+
+            <div class="drop drop--md">
+              <button class="drop__btn" href="#" type="button">
+                Каталог продуктов
+                <svg class="drop__svg">
+                  <use xlink:href="images/sprite.svg#chevron"></use>
+                </svg>
+              </button>
+              <ul class="drop__submenu">
+                <li class="drop__item">
+                  <a class="drop__link" href="#">
+                    Овощи и фрукты
+                  </a>
+                </li>
+                <li class="drop__item">
+                  <a class="drop__link" href="#">
+                    Бакалея
+                  </a>
+                </li>
+                <li class="drop__item">
+                  <a class="drop__link" href="#">
+                    Хлеб
+                  </a>
+                </li>
+                <li class="drop__item">
+                  <a class="drop__link" href="#">
+                    Мясо
+                  </a>
+                </li>
+                <li class="drop__item">
+                  <a class="drop__link" href="#">
+                    Колбаса
+                  </a>
+                </li>
+                <li class="drop__item">
+                  <a class="drop__link" href="#">
+                    Рыба
+                  </a>
+                </li>
+                <li class="drop__item">
+                  <a class="drop__link" href="#">
+                    Алкоголь
+                  </a>
+                </li>
+                <li class="drop__item">
+                  <a class="drop__link" href="#">
+                    Напитки
+                  </a>
+                </li>
+                <li class="drop__item">
+                  <a class="drop__link" href="#">
+                    Торты
+                  </a>
+                </li>
+                <li class="drop__item">
+                  <a class="drop__link" href="#">
+                    Мясо
+                  </a>
+                </li>
+                <li class="drop__item">
+                  <a class="drop__link" href="#">
+                    Чай, кофе
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <form class="form-search">
+              <label class="sr-only" for="form-search__input">Поиск / Введите название товара</label>
+              <input class="form-search__input" id="form-search__input" name="form-search"
+                placeholder="Найти в магазине ..." type="search" required>
+              <button class="btn btn--search" type="submit">Поиск</button>
+            </form>
+
+            <ul class="user-nav">
+              <li class="user-nav__item">
+                <button class="general-btn general-btn--search" type="button">
+                  <span class="sr-only">Поиск</span>
+                </button>
+              </li>
+              <li class="user-nav__item">
+                <button class="general-btn general-btn--user" type="button">
+                  <span class="sr-only">Открыть меню пользователя</span>
+                </button>
+              </li>
+              <li class="user-nav__item">
+                <button class="general-btn general-btn--favorites" type="button">
+                  <span class="sr-only">Открыть избранное</span>
+                  <span class="general-btn__num">12</span>
+                </button>
+              </li>
+              <li class="user-nav__item">
+                <button class="general-btn general-btn--basket" type="button">
+                  <span class="sr-only">Открыть корзину</span>
+                  <span class="general-btn__num">12</span>
+                </button>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcumbs__link" href="#">Главная</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcumbs__link" href="#">Каталог</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="catalog">
+      <div class="container">
+        <h2 class="catalog__title">Каталог товаров</h2>
+        <div class="catalog__inner">
+          <ul class="filters">
+            <li class="filter filter-category">
+              <button class="filter__btn" type="button" id="filter-category-btn">
+                Категории
+              </button>
+              <ul class="filter__submenu filter__submenu--category">
+                <li class="filter__item">
+                  <a class="filter__link" href="#">
+                    Овощи и фрукты
+                  </a>
+                </li>
+
+                <li class="filter__item">
+                  <a class="filter__link" href="#">
+                    Бакалея
+                  </a>
+                </li>
+
+                <li class="filter__item">
+                  <a class="filter__link" href="#">
+                    Молочные продукты
+                  </a>
+                </li>
+
+                <li class="filter__item">
+                  <a class="filter__link" href="#">
+                    Хлеб
+                  </a>
+                </li>
+
+                <li class="filter__item">
+                  <a class="filter__link" href="#">
+                    Мясо
+                  </a>
+                </li>
+
+                <li class="filter__item">
+                  <a class="filter__link" href="#">
+                    Колбаса
+                  </a>
+                </li>
+
+                <li class="filter__item">
+                  <a class="filter__link" href="#">
+                    Рыба
+                  </a>
+                </li>
+
+                <li class="filter__item">
+                  <a class="filter__link" href="#">
+                    Алкоголь
+                  </a>
+                </li>
+
+                <li class="filter__item">
+                  <a class="filter__link" href="#">
+                    Торты
+                  </a>
+                </li>
+
+                <li class="filter__item">
+                  <a class="filter__link" href="#">
+                    Чай, кофе
+                  </a>
+                </li>
+
+                <li class="filter__item">
+                  <a class="filter__link" href="#">
+                    Напитки
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="filter filter-offer">
+              <button class="filter__btn" type="button" id="filter-offer-btn">
+                Предложения
+              </button>
+              <ul class="filter__submenu filter__submenu--offer">
+
+                <li class="filter__item">
+                  <form class="filter-offer__form" action="#">
+                    <label class="filter-offer__label">
+                      Со скидкой
+                      <input class="filter-offer__input" type="checkbox">
+                      <span class="filter-offer__checkbox"></span>
+                    </label>
+                  </form>
+                </li>
+
+                <li class="filter__item">
+                  <form class="filter-offer__form" action="#">
+                    <label class="filter-offer__label">
+                      Новинка
+                      <input class="filter-offer__input" type="checkbox" checked>
+                      <span class="filter-offer__checkbox"></span>
+                    </label>
+                  </form>
+                </li>
+
+                <li class="filter__item">
+                  <form class="filter-offer__form" action="#">
+                    <label class="filter-offer__label">
+                      Хит
+                      <input class="filter-offer__input" type="checkbox">
+                      <span class="filter-offer__checkbox"></span>
+                    </label>
+                  </form>
+                </li>
+              </ul>
+
+            </li>
+
+
+
+            <li class="filter filter-brands">
+              <button class="filter__btn" type="button" id="filter-brands-btn">
+                Бренд
+              </button>
+              <ul class="filter__submenu filter__submenu--brands">
+
+                <li class="filter__item">
+                  <form class="filter-brands__form" action="#">
+                    <label class="filter-brands__label">
+                      CocaCola
+                      <input class="filter-brands__input" type="checkbox">
+                      <span class="filter-brands__checkbox"></span>
+                    </label>
+                  </form>
+                </li>
+
+                <li class="filter__item">
+                  <form class="filter-brands__form" action="#">
+                    <label class="filter-brands__label">
+                      Pepsi
+                      <input class="filter-brands__input" type="checkbox" checked>
+                      <span class="filter-brands__checkbox"></span>
+                    </label>
+                  </form>
+                </li>
+
+                <li class="filter__item">
+                  <form class="filter-brands__form" action="#">
+                    <label class="filter-brands__label">
+                      Sprite
+                      <input class="filter-brands__input" type="checkbox">
+                      <span class="filter-brands__checkbox"></span>
+                    </label>
+                  </form>
+                </li>
+
+                <li class="filter__item">
+                  <form class="filter-brands__form" action="#">
+                    <label class="filter-brands__label">
+                      Fanta
+                      <input class="filter-brands__input" type="checkbox">
+                      <span class="filter-brands__checkbox"></span>
+                    </label>
+                  </form>
+                </li>
+
+                <li class="filter__item">
+                  <form class="filter-brands__form" action="#">
+                    <label class="filter-brands__label">
+                      RedBull
+                      <input class="filter-brands__input" type="checkbox">
+                      <span class="filter-brands__checkbox"></span>
+                    </label>
+                  </form>
+                </li>
+
+                <li class="filter__item">
+                  <form class="filter-brands__form" action="#">
+                    <label class="filter-brands__label">
+                      Dr Pepper
+                      <input class="filter-brands__input" type="checkbox">
+                      <span class="filter-brands__checkbox"></span>
+                    </label>
+                  </form>
+                </li>
+
+              </ul>
+            </li>
+
+
+            <li class="filter filter-price">
+              <button class="filter__btn" type="button" id="filter-price-btn">
+                Цена
+              </button>
+              <ul class="filter__submenu filter__submenu--price">
+
+                <li class="filter__item">
+                  <form class="filter-price__form" action="#">
+                    <div class="filter-price__box">
+                      <div class="filter-price__box-label">от
+                        <input class="filter-price__box-input" type="number" id="filter-price__box-input-from">
+                        ₽
+                      </div>
+
+                      <div class="filter-price__box-label">
+                        до
+                        <input class="filter-price__box-input" type="nubmer" id="filter-price__box-input-to">
+                        ₽
+                      </div>
+                    </div>
+                    <label class="filter-price__label">
+                      <input class="filter-price__input" type="text" data-min="0" data-max="1250" data-from="200"
+                        data-to="1000">
+                      <span class="filter-price__checkbox"></span>
+                    </label>
+                  </form>
+                </li>
+
+
+
+              </ul>
+            </li>
+
+          </ul>
+
+
+
+
+
+
+
+
+
+
+
+          <div class="catalog-content"></div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a class="logo logo--center" href="#">
+          <img class="logo__img" src="images/icons/logo.svg" alt="логотип" width="200" height="60">
+        </a>
+      </div>
+
+      <div class="footer__content">
+
+        <div class="subscribe">
+          <div class="subscribe__text">
+            <p>
+              Следите за нашими акциями
+            </p>
+          </div>
+
+          <form class="subscribe-form">
+            <label class="sr-only" for="subscribe-form__input">Введите email чтобы подписаться</label>
+            <input class="subscribe-form__input" type="email" id="subscribe-form__input" name="subscribe-input"
+              placeholder="email@email.com" required>
+            <button class="btn btn--subscribe" type="submit">
+              подписаться
+            </button>
+          </form>
+
+        </div>
+
+        <nav class="footer-menu">
+          <ul class="footer-menu__list">
+
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">
+                О нас
+              </a>
+            </li>
+
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">
+                Контакты
+              </a>
+            </li>
+
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">
+                Публичная оферта
+              </a>
+            </li>
+
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">
+                Оплата и доставка
+              </a>
+            </li>
+
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">
+                Вакансии
+              </a>
+            </li>
+
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">
+                Акции
+              </a>
+            </li>
+
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">
+                Отзывы
+              </a>
+            </li>
+
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">
+                Новости
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+
+        <div class="contacts">
+          <address class="contacts__info">
+            <div class="contacts__item">
+              Горячая линия
+              <a class="contacts__link" href="tel:+7907288365">+7 907 288 365</a>
+            </div>
+            <div class="contacts__item">
+              Санкт-Петербург, ул. Ленина, 1
+            </div>
+          </address>
+
+          <ul class="social">
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank" width="32" height="32">
+                <svg class="social__svg">
+                  <use xlink:href="images/sprite.svg#facebook"></use>
+                </svg>
+                <span class="sr-only">Посмотреть facebook</span>
+              </a>
+            </li>
+
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank" width="32" height="32">
+                <svg class="social__svg">
+                  <use xlink:href="images/sprite.svg#youtube"></use>
+                </svg>
+                <span class="sr-only">Посмотреть youtube</span>
+              </a>
+            </li>
+
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank" width="32" height="32">
+                <svg class="social__svg">
+                  <use xlink:href="images/sprite.svg#telegram"></use>
+                </svg>
+                <span class="sr-only">Посмотреть telegram</span>
+              </a>
+            </li>
+
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank" width="32" height="32">
+                <svg class="social__svg">
+                  <use xlink:href="images/sprite.svg#instagram"></use>
+                </svg>
+                <span class="sr-only">Посмотреть instagram</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__box">
+          <div class="footer__copy">
+            © 2021 фрешок
+          </div>
+          <ul class="payment">
+
+            <li class="payment__item payment__item--visa"></li>
+
+            <li class="payment__item payment__item--mc"></li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

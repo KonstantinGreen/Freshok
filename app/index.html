@@ -389,79 +389,84 @@
 
     <section class="slider-main">
 
-      <div class="slider-main__box">
-        <div class="slider-main__bg" style="background-image: url(images/slider/slider-bg-1.jpg);">
-          <h2 class="sr-only">
-            Наши акции
-          </h2>
-          <div class="container">
-            <div class="slider-main__wrapper">
-              <div class="slider-main__info">
-                <h3 class="slider-main__title">
-                  свежачок вам в хату
-                  <span class="slider-main__subtitle">
-                    Скидка -50%
-                  </span>
-                </h3>
-                <div class="slider-main__descr">
-                  <p>
-                    Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
-                  </p>
-                </div>
-                <button class="btn" type="button">
-                  Купить сейчас
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ul class="slider-main__list">
 
-      <div class="slider-main__box">
-        <div class="slider-main__bg" style="background-image: url(images/slider/slider-bg-2.jpg);">
-          <div class="container">
-            <div class="slider-main__wrapper">
-              <div class="slider-main__info">
-                <h3 class="slider-main__title">
-                  накрути себе томатов
-                  <span class="slider-main__subtitle">
-                    акция: 3 кг по цене 1
-                  </span>
-                </h3>
-                <div class="slider-main__descr">
-                  <p>
-                    Только с 12 по 15 июля скидка на домашние помидорчики
-                  </p>
+        <li class="slider-main__box">
+          <div class="slider-main__bg" style="background-image: url(images/slider/slider-bg-1.jpg);">
+            <h2 class="sr-only">
+              Наши акции
+            </h2>
+            <div class="container">
+              <div class="slider-main__wrapper">
+                <div class="slider-main__info">
+                  <h3 class="slider-main__title">
+                    свежачок вам в хату
+                    <span class="slider-main__subtitle">
+                      Скидка -50%
+                    </span>
+                  </h3>
+                  <div class="slider-main__descr">
+                    <p>
+                      Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
+                    </p>
+                  </div>
+                  <button class="btn" type="button">
+                    Купить сейчас
+                  </button>
                 </div>
-                <button class="btn" type="button">
-                  Купить сейчас
-                </button>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </li>
 
-      <div class="slider-main__box">
-        <div class="slider-main__bg" style="background-image: url(images/slider/slider-bg-3.jpg);">
-          <div class="container">
-            <div class="slider-main__wrapper">
-              <div class="slider-main__info">
-                <h3 class="slider-main__title">
-                  Пусть остальные
-                  позеленеют от зависти
-                  <span class="slider-main__subtitle">
-                    Распродажа зелени
-                  </span>
-                </h3>
-                <button class="btn" type="button">
-                  Купить сейчас
-                </button>
+        <li class="slider-main__box">
+          <div class="slider-main__bg" style="background-image: url(images/slider/slider-bg-2.jpg);">
+            <div class="container">
+              <div class="slider-main__wrapper">
+                <div class="slider-main__info">
+                  <h3 class="slider-main__title">
+                    накрути себе томатов
+                    <span class="slider-main__subtitle">
+                      акция: 3 кг по цене 1
+                    </span>
+                  </h3>
+                  <div class="slider-main__descr">
+                    <p>
+                      Только с 12 по 15 июля скидка на домашние помидорчики
+                    </p>
+                  </div>
+                  <button class="btn" type="button">
+                    Купить сейчас
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </li>
+
+        <li class="slider-main__box">
+          <div class="slider-main__bg" style="background-image: url(images/slider/slider-bg-3.jpg);">
+            <div class="container">
+              <div class="slider-main__wrapper">
+                <div class="slider-main__info">
+                  <h3 class="slider-main__title">
+                    Пусть остальные
+                    позеленеют от зависти
+                    <span class="slider-main__subtitle">
+                      Распродажа зелени
+                    </span>
+                  </h3>
+                  <button class="btn" type="button">
+                    Купить сейчас
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
     </section>
 
     <div class="advantages">
@@ -568,13 +573,13 @@
                 <div class="counter-block">
                   <div class="counter-block__box">
                     <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                      <span class="sr-only">Кнопка минус</span>
+                      <span class="sr-only">минус</span>
                     </button>
-                    <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
+                    <label class="sr-only" for="counter-merchandise">Введите колличество которое хотите купить</label>
                     <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise" type="nubmer"
                       value="1" step="1" min="1" max="99">
                     <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                      <span class="sr-only">Кнопка плюс</span>
+                      <span class="sr-only">плюс</span>
                     </button>
                   </div>
                 </div>
@@ -620,13 +625,13 @@
                   <div class="counter-block">
                     <div class="counter-block__box">
                       <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                        <span class="sr-only">Кнопка минус</span>
+                        <span class="sr-only">минус</span>
                       </button>
                       <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
                       <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
                         type="nubmer" value="1" step="1" min="1" max="99">
                       <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                        <span class="sr-only">Кнопка плюс</span>
+                        <span class="sr-only">плюс</span>
                       </button>
                     </div>
                   </div>
@@ -678,13 +683,13 @@
                   <div class="counter-block">
                     <div class="counter-block__box">
                       <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                        <span class="sr-only">Кнопка минус</span>
+                        <span class="sr-only">минус</span>
                       </button>
                       <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
                       <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
                         type="nubmer" value="1" step="1" min="1" max="99">
                       <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                        <span class="sr-only">Кнопка плюс</span>
+                        <span class="sr-only">плюс</span>
                       </button>
                     </div>
                   </div>
@@ -733,13 +738,13 @@
                   <div class="counter-block">
                     <div class="counter-block__box">
                       <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                        <span class="sr-only">Кнопка минус</span>
+                        <span class="sr-only">минус</span>
                       </button>
                       <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
                       <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
                         type="nubmer" value="1" step="1" min="1" max="99">
                       <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                        <span class="sr-only">Кнопка плюс</span>
+                        <span class="sr-only">плюс</span>
                       </button>
                     </div>
                   </div>
@@ -789,13 +794,13 @@
                   <div class="counter-block">
                     <div class="counter-block__box">
                       <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                        <span class="sr-only">Кнопка минус</span>
+                        <span class="sr-only">минус</span>
                       </button>
                       <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
                       <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
                         type="nubmer" value="1" step="1" min="1" max="99">
                       <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                        <span class="sr-only">Кнопка плюс</span>
+                        <span class="sr-only">плюс</span>
                       </button>
                     </div>
                   </div>
@@ -847,13 +852,13 @@
                   <div class="counter-block">
                     <div class="counter-block__box">
                       <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                        <span class="sr-only">Кнопка минус</span>
+                        <span class="sr-only">минус</span>
                       </button>
                       <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
                       <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
                         type="nubmer" value="1" step="1" min="1" max="99">
                       <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                        <span class="sr-only">Кнопка плюс</span>
+                        <span class="sr-only">плюс</span>
                       </button>
                     </div>
                   </div>
@@ -903,13 +908,13 @@
                   <div class="counter-block">
                     <div class="counter-block__box">
                       <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                        <span class="sr-only">Кнопка минус</span>
+                        <span class="sr-only">минус</span>
                       </button>
                       <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
                       <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
                         type="nubmer" value="1" step="1" min="1" max="99">
                       <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                        <span class="sr-only">Кнопка плюс</span>
+                        <span class="sr-only">плюс</span>
                       </button>
                     </div>
                   </div>
@@ -961,13 +966,13 @@
                   <div class="counter-block">
                     <div class="counter-block__box">
                       <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                        <span class="sr-only">Кнопка минус</span>
+                        <span class="sr-only">минус</span>
                       </button>
                       <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
                       <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
                         type="nubmer" value="1" step="1" min="1" max="99">
                       <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                        <span class="sr-only">Кнопка плюс</span>
+                        <span class="sr-only">плюс</span>
                       </button>
                     </div>
                   </div>
@@ -1095,9 +1100,9 @@
                     Ананас, 1 кг
                   </h3>
                   <div class="card-promo__price">
-                    <div class="card-promo__availability">
+                    <span class="availability">
                       в наличии
-                    </div>
+                    </span>
                     <div class="pricing pricing--promo">
                       <span class="pricing__oldprice">1999<span> ₽</span>
                       </span>
@@ -1109,7 +1114,6 @@
 
                 <div class="card-promo__ratings">
                   <div class="rating">
-                    <span class="sr-only">Рейтинг</span>
                     <span class="rating__num">4.5</span>
                     <svg class="rating__svg">
                       <use xlink:href="images/sprite.svg#star"></use>
@@ -1139,9 +1143,9 @@
                     Кофе с коноплей органический Caffé Salomoni 250г
                   </h3>
                   <div class="card-promo__price">
-                    <div class="card-promo__availability card-promo__availability--red">
+                    <span class="availibility availability--red">
                       Заканчивается
-                    </div>
+                    </span>
                     <div class="pricing pricing--promo">
                       <span class="pricing__oldprice">877<span> ₽</span>
                       </span>
@@ -1153,7 +1157,6 @@
 
                 <div class="card-promo__ratings">
                   <div class="rating">
-                    <span class="sr-only">Рейтинг</span>
                     <span class="rating__num">4.9</span>
                     <svg class="rating__svg">
                       <use xlink:href="images/sprite.svg#star"></use>
@@ -1183,9 +1186,9 @@
                     Клубника, 1 кг
                   </h3>
                   <div class="card-promo__price">
-                    <div class="card-promo__availability card-promo__availability--gray">
+                    <span class="availability availability--gray">
                       нет в наличии
-                    </div>
+                    </span>
                     <div class="pricing pricing--promo">
                       <span class="pricing__oldprice">600<span> ₽</span>
                       </span>
@@ -1197,7 +1200,6 @@
 
                 <div class="card-promo__ratings">
                   <div class="rating">
-                    <span class="sr-only">Рейтинг</span>
                     <span class="rating__num">5.0</span>
                     <svg class="rating__svg">
                       <use xlink:href="images/sprite.svg#star"></use>
@@ -1227,9 +1229,9 @@
                     Манго, 1 шт
                   </h3>
                   <div class="card-promo__price">
-                    <div class="card-promo__availability">
+                    <span class="availability">
                       в наличии
-                    </div>
+                    </span>
                     <div class="pricing pricing--promo">
                       <span class="pricing__oldprice">960<span> ₽</span>
                       </span>
@@ -1241,7 +1243,6 @@
 
                 <div class="card-promo__ratings">
                   <div class="rating">
-                    <span class="sr-only">Рейтинг</span>
                     <span class="rating__num">5.0</span>
                     <svg class="rating__svg">
                       <use xlink:href="images/sprite.svg#star"></use>
@@ -1271,9 +1272,9 @@
                     Лосось, 1 кг
                   </h3>
                   <div class="card-promo__price">
-                    <div class="card-promo__availability">
+                    <span class="availability">
                       в наличии
-                    </div>
+                    </span>
                     <div class="pricing pricing--promo">
                       <span class="pricing__oldprice">1119<span> ₽</span>
                       </span>
@@ -1285,7 +1286,6 @@
 
                 <div class="card-promo__ratings">
                   <div class="rating">
-                    <span class="sr-only">Рейтинг</span>
                     <span class="rating__num">4.5</span>
                     <svg class="rating__svg">
                       <use xlink:href="images/sprite.svg#star"></use>
@@ -1316,9 +1316,9 @@
                     Сок Granini овощной 100%, 0.5л
                   </h3>
                   <div class="card-promo__price">
-                    <div class="card-promo__availability card-promo__availability--red">
+                    <span class="availability availability--red">
                       Заканчивается
-                    </div>
+                    </span>
                     <div class="pricing pricing--promo">
                       <span class="pricing__oldprice">230<span> ₽</span>
                       </span>
@@ -1330,7 +1330,6 @@
 
                 <div class="card-promo__ratings">
                   <div class="rating">
-                    <span class="sr-only">Рейтинг</span>
                     <span class="rating__num">4.9</span>
                     <svg class="rating__svg">
                       <use xlink:href="images/sprite.svg#star"></use>
@@ -1360,9 +1359,9 @@
                     Фруктовая корзина, 1 шт
                   </h3>
                   <div class="card-promo__price">
-                    <div class="card-promo__availability">
+                    <span class="availability">
                       в наличии
-                    </div>
+                    </span>
                     <div class="pricing pricing--promo">
                       <span class="pricing__oldprice">5990<span> ₽</span>
                       </span>
@@ -1374,7 +1373,6 @@
 
                 <div class="card-promo__ratings">
                   <div class="rating">
-                    <span class="sr-only">Рейтинг</span>
                     <span class="rating__num">4.8</span>
                     <svg class="rating__svg">
                       <use xlink:href="images/sprite.svg#star"></use>
@@ -1406,9 +1404,9 @@
                     Свинина мякоть, 1 кг
                   </h3>
                   <div class="card-promo__price">
-                    <div class="card-promo__availability">
+                    <span class="availability">
                       в наличии
-                    </div>
+                    </span>
                     <div class="pricing pricing--promo">
                       <span class="pricing__oldprice">599<span> ₽</span>
                       </span>
@@ -1420,7 +1418,6 @@
 
                 <div class="card-promo__ratings">
                   <div class="rating">
-                    <span class="sr-only">Рейтинг</span>
                     <span class="rating__num">4.6</span>
                     <svg class="rating__svg">
                       <use xlink:href="images/sprite.svg#star"></use>
@@ -1571,8 +1568,8 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
-        <a class="logo">
-          <img class="logo__img logo__img--footer" src="images/icons/logo.svg" alt="логотип" width="200" height="60">
+        <a class="logo logo--center" href="#">
+          <img class="logo__img" src="images/icons/logo.svg" alt="логотип" width="200" height="60">
         </a>
       </div>
 
@@ -1649,6 +1646,7 @@
 
           </ul>
         </nav>
+
 
         <div class="contacts">
           <address class="contacts__info">
