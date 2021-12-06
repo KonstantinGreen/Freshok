@@ -242,6 +242,16 @@ $('.filter-content__btn').on('click', function () {
   $(this).addClass('filter-content__btn--active')
 });
 
+$('#filter-btn-list').on('click', function () {
+  $('.product-card').addClass('product-card--list')
+  $('.catalog-content__item').addClass('catalog-content__item--list')
+});
+
+$('#filter-btn-grid').on('click', function () {
+  $('.product-card').removeClass('product-card--list')
+  $('.catalog-content__item').removeClass('catalog-content__item--list')
+});
+
 
 $('.select-style').styler({
 

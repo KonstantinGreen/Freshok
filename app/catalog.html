@@ -623,7 +623,7 @@
 
           <div class="catalog-content">
             <div class="filter-content">
-              <div class="filter-content-selects">
+              <div class="filter-content__selects">
                 <form class="filter-content__filter-form" action="#">
                   <select class="filter-content__select-sort select-style" id="filter-content__select-sort">
                     <option value="По названию">По названию</option>
@@ -641,21 +641,913 @@
                 </form>
               </div>
               <div class="filter-content__buttons">
-                <button class="filter-content__btn">
+                <button class="filter-content__btn" id="filter-btn-list">
                   <svg class="filter-content__svg">
                     <use xlink:href="images/sprite.svg#list"></use>
                   </svg>
                 </button>
-                <button class="filter-content__btn filter-content__btn--active">
+                <button class="filter-content__btn filter-content__btn--active" id="filter-btn-grid">
                   <svg class="filter-content__svg">
                     <use xlink:href="images/sprite.svg#grid"></use>
                   </svg>
                 </button>
               </div>
             </div>
+
+
+            <ul class="catalog-content__list">
+
+              <li class="catalog-content__item">
+                <article class="product-card">
+                  <div class="product-card__info">
+                    <div class="badge badge--green">Новинка</div>
+                    <div class="badge badge--red">-30%</div>
+                  </div>
+                  <button class="product-card__btn" type="button">
+                    <span class="sr-only">Добавить в избранное</span>
+                    <svg class="product-card__svg">
+                      <use xlink:href="images/sprite.svg#hearts"></use>
+                    </svg>
+                  </button>
+
+                  <a class="product-card__link" href="#">
+                    <img class="product-card__img" src="images/content/top/lifeline-juice.jpg"
+                      alt="Напиток сокосодержащий Sanpellegrino Aranciata" width="300" height="215">
+                  </a>
+
+                  <div class="product-card__center">
+                    <div class="product-card__status">
+                      <div class="availability">
+                        в наличии
+                      </div>
+                      <div class="rating">
+                        <span class="rating__num">3.5</span>
+                        <svg class="rating__svg">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="product-card__bottom">
+                      <h3 class="product-card__name">
+                        Напиток LIFELINE Intellectual со вкусом арбуза и яблока Фонте...
+                      </h3>
+                      <div class="pricing">
+                        <span class="pricing__oldprice">149<span></span>
+                        </span>
+                        <span class="pricing__newprice">99<span> ₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card__buy">
+                    <form class="form-buy">
+                      <div class="counter-block">
+                        <div class="counter-block__box">
+                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
+                            <span class="sr-only">минус</span>
+                          </button>
+                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
+                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
+                            type="nubmer" value="1" step="1" min="1" max="99">
+                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
+                            <span class="sr-only">плюс</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="basket" type="submit">
+                        <span class="sr-only">Добавить в корзину</span>
+                        <svg class="basket__svg">
+                          <use xlink:href="images/sprite.svg#cart"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+
+                </article>
+              </li>
+
+              <li class="catalog-content__item">
+                <article class="product-card">
+                  <button class="product-card__btn" type="button">
+                    <span class="sr-only">Добавить в избранное</span>
+                    <svg class="product-card__svg">
+                      <use xlink:href="images/sprite.svg#hearts"></use>
+                    </svg>
+                  </button>
+
+                  <a class="product-card__link" href="#">
+                    <img class="product-card__img" src="images/content/top/lemon.jpg"
+                      alt="Напиток сокосодержащий Sanpellegrino Aranciata" width="300" height="215">
+                  </a>
+
+                  <div class="product-card__center">
+                    <div class="product-card__status">
+                      <div class="availability">
+                        в наличии
+                      </div>
+                      <div class="rating">
+                        <span class="rating__num">4.5</span>
+                        <svg class="rating__svg">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="product-card__bottom">
+                      <h3 class="product-card__name">
+                        Лимон, 1кг
+                      </h3>
+                      <div class="pricing">
+                        <span class="pricing__newprice">199<span> ₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card__buy">
+                    <form class="form-buy">
+                      <div class="counter-block">
+                        <div class="counter-block__box">
+                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
+                            <span class="sr-only">минус</span>
+                          </button>
+                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
+                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
+                            type="nubmer" value="1" step="1" min="1" max="99">
+                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
+                            <span class="sr-only">плюс</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="basket" type="submit">
+                        <span class="sr-only">Добавить в корзину</span>
+                        <svg class="basket__svg">
+                          <use xlink:href="images/sprite.svg#cart"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+
+                </article>
+              </li>
+
+              <li class="catalog-content__item">
+                <article class="product-card">
+                  <div class="product-card__info">
+                    <div class="badge badge--orange">Хит</div>
+                  </div>
+                  <button class="product-card__btn" type="button">
+                    <span class="sr-only">Добавить в избранное</span>
+                    <svg class="product-card__svg">
+                      <use xlink:href="images/sprite.svg#hearts"></use>
+                    </svg>
+                  </button>
+
+                  <a class="product-card__link" href="#">
+                    <img class="product-card__img" src="images/content/top/dragon-fruit.jpg"
+                      alt="Напиток сокосодержащий Sanpellegrino Aranciata" width="300" height="215">
+                  </a>
+
+                  <div class="product-card__center">
+                    <div class="product-card__status">
+                      <div class="availability">
+                        в наличии
+                      </div>
+                      <div class="rating">
+                        <span class="rating__num">4.5</span>
+                        <svg class="rating__svg">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="product-card__bottom">
+                      <h3 class="product-card__name">
+                        Питахайя красная с белой мякотью, 1шт
+                      </h3>
+                      <div class="pricing">
+                        <span class="pricing__newprice">1019<span> ₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card__buy">
+                    <form class="form-buy">
+                      <div class="counter-block">
+                        <div class="counter-block__box">
+                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
+                            <span class="sr-only">минус</span>
+                          </button>
+                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
+                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
+                            type="nubmer" value="1" step="1" min="1" max="99">
+                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
+                            <span class="sr-only">плюс</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="basket" type="submit">
+                        <span class="sr-only">Добавить в корзину</span>
+                        <svg class="basket__svg">
+                          <use xlink:href="images/sprite.svg#cart"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+
+                </article>
+              </li>
+
+              <li class="catalog-content__item">
+                <article class="product-card">
+                  <div class="product-card__info">
+                    <div class="badge badge--orange">Хит</div>
+                  </div>
+                  <button class="product-card__btn" type="button">
+                    <span class="sr-only">Добавить в избранное</span>
+                    <svg class="product-card__svg">
+                      <use xlink:href="images/sprite.svg#hearts"></use>
+                    </svg>
+                  </button>
+
+                  <a class="product-card__link" href="#">
+                    <img class="product-card__img" src="images/content/top/carrot.jpg"
+                      alt="Напиток сокосодержащий Sanpellegrino Aranciata" width="300" height="215">
+                  </a>
+
+                  <div class="product-card__center">
+                    <div class="product-card__status">
+                      <div class="availability availability--gray">
+                        нет в наличии
+                      </div>
+                      <div class="rating">
+                        <span class="rating__num">4.5</span>
+                        <svg class="rating__svg">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="product-card__bottom">
+                      <h3 class="product-card__name">
+                        Морковь молодая с бабушкиной грядки, 1кг
+                      </h3>
+                      <div class="pricing">
+                        <span class="pricing__newprice">49<span> ₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card__buy">
+                    <form class="form-buy">
+                      <div class="counter-block">
+                        <div class="counter-block__box">
+                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
+                            <span class="sr-only">минус</span>
+                          </button>
+                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
+                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
+                            type="nubmer" value="1" step="1" min="1" max="99">
+                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
+                            <span class="sr-only">плюс</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="basket" type="submit">
+                        <span class="sr-only">Добавить в корзину</span>
+                        <svg class="basket__svg">
+                          <use xlink:href="images/sprite.svg#cart"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+
+                </article>
+              </li>
+
+              <li class="catalog-content__item">
+                <article class="product-card">
+                  <div class="product-card__info">
+                    <div class="badge badge--red">-30%</div>
+                  </div>
+                  <button class="product-card__btn" type="button">
+                    <span class="sr-only">Добавить в избранное</span>
+                    <svg class="product-card__svg">
+                      <use xlink:href="images/sprite.svg#hearts"></use>
+                    </svg>
+                  </button>
+
+                  <a class="product-card__link" href="#">
+                    <img class="product-card__img" src="images/content/top/juice.jpg"
+                      alt="Напиток сокосодержащий Sanpellegrino Aranciata" width="300" height="215">
+                  </a>
+
+                  <div class="product-card__center">
+                    <div class="product-card__status">
+                      <div class="availability">
+                        в наличии
+                      </div>
+                      <div class="rating">
+                        <span class="rating__num">4.5</span>
+                        <svg class="rating__svg">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="product-card__bottom">
+                      <h3 class="product-card__name">
+                        Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкогольн...
+                      </h3>
+                      <div class="pricing">
+                        <span class="pricing__oldprice">299<span></span>
+                        </span>
+                        <span class="pricing__newprice">199<span> ₽</span>
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="product-card__buy">
+                    <form class="form-buy">
+                      <div class="counter-block">
+                        <div class="counter-block__box">
+                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
+                            <span class="sr-only">минус</span>
+                          </button>
+                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
+                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
+                            type="nubmer" value="1" step="1" min="1" max="99">
+                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
+                            <span class="sr-only">плюс</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="basket" type="submit">
+                        <span class="sr-only">Добавить в корзину</span>
+                        <svg class="basket__svg">
+                          <use xlink:href="images/sprite.svg#cart"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+
+                </article>
+              </li>
+
+              <li class="catalog-content__item">
+                <article class="product-card">
+                  <div class="product-card__info">
+                    <div class="badge badge--red">-30%</div>
+                  </div>
+                  <button class="product-card__btn" type="button">
+                    <span class="sr-only">Добавить в избранное</span>
+                    <svg class="product-card__svg">
+                      <use xlink:href="images/sprite.svg#hearts"></use>
+                    </svg>
+                  </button>
+
+                  <a class="product-card__link" href="#">
+                    <img class="product-card__img" src="images/content/top/coffee.jpg"
+                      alt="Кофе с коноплей органический Caffé Salomoni 250г" width="300" height="215">
+                  </a>
+
+                  <div class="product-card__center">
+
+                    <div class="product-card__status">
+                      <div class="availability availability--red">
+                        Заканчивается
+                      </div>
+                      <div class="rating">
+                        <span class="rating__num">4.5</span>
+                        <svg class="rating__svg">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="product-card__bottom">
+                      <h3 class="product-card__name">
+                        Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкогольн...
+                      </h3>
+                      <div class="pricing">
+                        <span class="pricing__newprice">877<span> ₽</span>
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="product-card__buy">
+                    <form class="form-buy">
+                      <div class="counter-block">
+                        <div class="counter-block__box">
+                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
+                            <span class="sr-only">минус</span>
+                          </button>
+                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
+                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
+                            type="nubmer" value="1" step="1" min="1" max="99">
+                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
+                            <span class="sr-only">плюс</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="basket" type="submit">
+                        <span class="sr-only">Добавить в корзину</span>
+                        <svg class="basket__svg">
+                          <use xlink:href="images/sprite.svg#cart"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+
+                </article>
+              </li>
+
+              <li class="catalog-content__item">
+                <article class="product-card">
+                  <div class="product-card__info">
+                    <div class="badge badge--green">новинка</div>
+                  </div>
+                  <button class="product-card__btn" type="button">
+                    <span class="sr-only">Добавить в избранное</span>
+                    <svg class="product-card__svg">
+                      <use xlink:href="images/sprite.svg#hearts"></use>
+                    </svg>
+                  </button>
+
+                  <a class="product-card__link" href="#">
+                    <img class="product-card__img" src="images/content/top/paprik.jpg" alt="Перец оранжевый, 1кг"
+                      width="300" height="215">
+                  </a>
+
+                  <div class="product-card__center">
+
+                    <div class="product-card__status">
+                      <div class="availability availability--red">
+                        Заканчивается
+                      </div>
+                      <div class="rating">
+                        <span class="rating__num">4.5</span>
+                        <svg class="rating__svg">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="product-card__bottom">
+                      <h3 class="product-card__name">
+                        Перец оранжевый, 1кг
+                      </h3>
+                      <div class="pricing">
+                        <span class="pricing__newprice">877<span> ₽</span>
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="product-card__buy">
+                    <form class="form-buy">
+                      <div class="counter-block">
+                        <div class="counter-block__box">
+                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
+                            <span class="sr-only">минус</span>
+                          </button>
+                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
+                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
+                            type="nubmer" value="1" step="1" min="1" max="99">
+                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
+                            <span class="sr-only">плюс</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="basket" type="submit">
+                        <span class="sr-only">Добавить в корзину</span>
+                        <svg class="basket__svg">
+                          <use xlink:href="images/sprite.svg#cart"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+
+                </article>
+              </li>
+
+              <li class="catalog-content__item">
+                <article class="product-card">
+                  <div class="product-card__info"></div>
+                  <button class="product-card__btn" type="button">
+                    <span class="sr-only">Добавить в избранное</span>
+                    <svg class="product-card__svg">
+                      <use xlink:href="images/sprite.svg#hearts"></use>
+                    </svg>
+                  </button>
+
+                  <a class="product-card__link" href="#">
+                    <img class="product-card__img" src="images/content/top/ketchup.jpg"
+                      alt="Кетчуп томатный детский Bio-Zentrale" width="300" height="215">
+                  </a>
+
+                  <div class="product-card__center">
+
+                    <div class="product-card__status">
+                      <div class="availability">
+                        в наличии
+                      </div>
+                      <div class="rating">
+                        <span class="rating__num">4.5</span>
+                        <svg class="rating__svg">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="product-card__bottom">
+                      <h3 class="product-card__name">
+                        Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт
+                      </h3>
+                      <div class="pricing">
+                        <span class="pricing__newprice">600<span> ₽</span>
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="product-card__buy">
+                    <form class="form-buy">
+                      <div class="counter-block">
+                        <div class="counter-block__box">
+                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
+                            <span class="sr-only">минус</span>
+                          </button>
+                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
+                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
+                            type="nubmer" value="1" step="1" min="1" max="99">
+                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
+                            <span class="sr-only">плюс</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="basket" type="submit">
+                        <span class="sr-only">Добавить в корзину</span>
+                        <svg class="basket__svg">
+                          <use xlink:href="images/sprite.svg#cart"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+
+                </article>
+              </li>
+
+              <li class="catalog-content__item">
+                <article class="product-card">
+                  <div class="product-card__info">
+                    <div class="badge badge--green">Новинка</div>
+                    <div class="badge badge--red">-50%</div>
+                  </div>
+                  <button class="product-card__btn" type="button">
+                    <span class="sr-only">Добавить в избранное</span>
+                    <svg class="product-card__svg">
+                      <use xlink:href="images/sprite.svg#hearts"></use>
+                    </svg>
+                  </button>
+
+                  <a class="product-card__link" href="#">
+                    <img class="product-card__img" src="images/content/top/pineapple.jpg" alt="Ананас, 1кг" width="300"
+                      height="215">
+                  </a>
+
+                  <div class="product-card__center">
+                    <div class="product-card__status">
+                      <div class="availability">
+                        в наличии
+                      </div>
+                      <div class="rating">
+                        <span class="rating__num">3.5</span>
+                        <svg class="rating__svg">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="product-card__bottom">
+                      <h3 class="product-card__name">
+                        Ананас, 1кг
+                      </h3>
+                      <div class="pricing">
+                        <span class="pricing__oldprice">1999<span></span>
+                        </span>
+                        <span class="pricing__newprice">999<span> ₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card__buy">
+                    <form class="form-buy">
+                      <div class="counter-block">
+                        <div class="counter-block__box">
+                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
+                            <span class="sr-only">минус</span>
+                          </button>
+                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
+                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
+                            type="nubmer" value="1" step="1" min="1" max="99">
+                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
+                            <span class="sr-only">плюс</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="basket" type="submit">
+                        <span class="sr-only">Добавить в корзину</span>
+                        <svg class="basket__svg">
+                          <use xlink:href="images/sprite.svg#cart"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+
+                </article>
+              </li>
+
+              <li class="catalog-content__item">
+                <article class="product-card">
+                  <div class="product-card__info">
+                    <div class="badge badge--orange">Хит</div>
+                  </div>
+                  <button class="product-card__btn" type="button">
+                    <span class="sr-only">Добавить в избранное</span>
+                    <svg class="product-card__svg">
+                      <use xlink:href="images/sprite.svg#hearts"></use>
+                    </svg>
+                  </button>
+
+                  <a class="product-card__link" href="#">
+                    <img class="product-card__img" src="images/content/top/carrot.jpg"
+                      alt="Напиток сокосодержащий Sanpellegrino Aranciata" width="300" height="215">
+                  </a>
+
+                  <div class="product-card__center">
+                    <div class="product-card__status">
+                      <div class="availability availability--gray">
+                        нет в наличии
+                      </div>
+                      <div class="rating">
+                        <span class="rating__num">4.5</span>
+                        <svg class="rating__svg">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="product-card__bottom">
+                      <h3 class="product-card__name">
+                        Морковь молодая с бабушкиной грядки, 1кг
+                      </h3>
+                      <div class="pricing">
+                        <span class="pricing__newprice">49<span> ₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card__buy">
+                    <form class="form-buy">
+                      <div class="counter-block">
+                        <div class="counter-block__box">
+                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
+                            <span class="sr-only">минус</span>
+                          </button>
+                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
+                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
+                            type="nubmer" value="1" step="1" min="1" max="99">
+                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
+                            <span class="sr-only">плюс</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="basket" type="submit">
+                        <span class="sr-only">Добавить в корзину</span>
+                        <svg class="basket__svg">
+                          <use xlink:href="images/sprite.svg#cart"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+
+                </article>
+              </li>
+
+              <li class="catalog-content__item">
+                <article class="product-card">
+                  <div class="product-card__info">
+                    <div class="badge badge--red">-30%</div>
+                  </div>
+                  <button class="product-card__btn" type="button">
+                    <span class="sr-only">Добавить в избранное</span>
+                    <svg class="product-card__svg">
+                      <use xlink:href="images/sprite.svg#hearts"></use>
+                    </svg>
+                  </button>
+
+                  <a class="product-card__link" href="#">
+                    <img class="product-card__img" src="images/content/top/juice.jpg"
+                      alt="Напиток сокосодержащий Sanpellegrino Aranciata" width="300" height="215">
+                  </a>
+
+                  <div class="product-card__center">
+                    <div class="product-card__status">
+                      <div class="availability">
+                        в наличии
+                      </div>
+                      <div class="rating">
+                        <span class="rating__num">4.5</span>
+                        <svg class="rating__svg">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="product-card__bottom">
+                      <h3 class="product-card__name">
+                        Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкогольн...
+                      </h3>
+                      <div class="pricing">
+                        <span class="pricing__oldprice">299<span></span>
+                        </span>
+                        <span class="pricing__newprice">199<span> ₽</span>
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="product-card__buy">
+                    <form class="form-buy">
+                      <div class="counter-block">
+                        <div class="counter-block__box">
+                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
+                            <span class="sr-only">минус</span>
+                          </button>
+                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
+                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
+                            type="nubmer" value="1" step="1" min="1" max="99">
+                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
+                            <span class="sr-only">плюс</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="basket" type="submit">
+                        <span class="sr-only">Добавить в корзину</span>
+                        <svg class="basket__svg">
+                          <use xlink:href="images/sprite.svg#cart"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+
+                </article>
+              </li>
+
+              <li class="catalog-content__item">
+                <article class="product-card">
+                  <div class="product-card__info">
+                    <div class="badge badge--red">-30%</div>
+                  </div>
+                  <button class="product-card__btn" type="button">
+                    <span class="sr-only">Добавить в избранное</span>
+                    <svg class="product-card__svg">
+                      <use xlink:href="images/sprite.svg#hearts"></use>
+                    </svg>
+                  </button>
+
+                  <a class="product-card__link" href="#">
+                    <img class="product-card__img" src="images/content/top/coffee.jpg"
+                      alt="Кофе с коноплей органический Caffé Salomoni 250г" width="300" height="215">
+                  </a>
+
+                  <div class="product-card__center">
+
+                    <div class="product-card__status">
+                      <div class="availability availability--red">
+                        Заканчивается
+                      </div>
+                      <div class="rating">
+                        <span class="rating__num">4.5</span>
+                        <svg class="rating__svg">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="product-card__bottom">
+                      <h3 class="product-card__name">
+                        Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкогольн...
+                      </h3>
+                      <div class="pricing">
+                        <span class="pricing__newprice">877<span> ₽</span>
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="product-card__buy">
+                    <form class="form-buy">
+                      <div class="counter-block">
+                        <div class="counter-block__box">
+                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
+                            <span class="sr-only">минус</span>
+                          </button>
+                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
+                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
+                            type="nubmer" value="1" step="1" min="1" max="99">
+                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
+                            <span class="sr-only">плюс</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="basket" type="submit">
+                        <span class="sr-only">Добавить в корзину</span>
+                        <svg class="basket__svg">
+                          <use xlink:href="images/sprite.svg#cart"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+
+                </article>
+              </li>
+
+            </ul>
+
+
+            <div class="catalog-content__bottom">
+              <button class="btn" type="button">Показать еще</button>
+
+              <div class="pagination">
+                <a class="pagination__prev pagination__arrows" href="#">
+
+                </a>
+                <ul class="pagination__list">
+
+                  <li class="pagination__item">
+                    <a class="pagination__link pagination__link--active" href="#">
+                      1
+                    </a>
+                  </li>
+
+                  <li class="pagination__item">
+                    <a class="pagination__link" href="#">
+                      2
+                    </a>
+                  </li>
+
+                  <li class="pagination__item">
+                    <span class="pagination__link" href="#">
+                      ....
+                    </span>
+                  </li>
+
+                  <li class="pagination__item">
+                    <a class="pagination__link" href="#">
+                      9
+                    </a>
+                  </li>
+
+                  <li class="pagination__item">
+                    <a class="pagination__link" href="#">
+                      10
+                    </a>
+                  </li>
+
+                </ul>
+                <a class="pagination__next pagination__arrows" href="#">
+
+                </a>
+              </div>
+
+            </div>
+
           </div>
 
+
+
         </div>
+
+
+
+
+
       </div>
     </section>
 
