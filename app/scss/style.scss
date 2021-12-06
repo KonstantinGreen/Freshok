@@ -1785,6 +1785,16 @@
     border: 1px solid $silver;
     border-radius: 6px 6px 0 0;
     padding: 17px 0 17px 18px;
+    outline: 0;
+    transition: box-shadow 0.5s, background-color 0.5s;
+
+    &:focus {
+      box-shadow: 0 0 0 4px $green-200;
+    }
+
+    &:hover {
+      background-color: $green-200;
+    }
   }
 
   &__item {
@@ -1848,9 +1858,6 @@
       background-color: transparent;
     }
   }
-}
-
-.filter-brands {
 
   &__label {
     display: block;
@@ -1861,12 +1868,18 @@
     cursor: pointer;
     font-weight: 400;
     position: relative;
+
+    &:hover {
+      .filter__checkbox {
+        border-color: $dark-500;
+      }
+    }
   }
 
   &__input {
     @extend %checkbox-hidden;
 
-    &:checked+.filter-brands__checkbox {
+    &:checked+.filter__checkbox {
       background-image: url(../images/icons/check.svg);
       background-repeat: no-repeat;
       background-position: center;
@@ -1884,44 +1897,7 @@
     border-radius: 3px;
     left: 18px;
     top: -2px;
-  }
-}
-
-
-.filter-offer {
-
-  &__label {
-    display: block;
-    padding-left: 55px;
-    font-size: 18px;
-    line-height: 1.2;
-    color: $dark-500;
-    cursor: pointer;
-    font-weight: 400;
-    position: relative;
-  }
-
-  &__input {
-    @extend %checkbox-hidden;
-
-    &:checked+.filter-offer__checkbox {
-      background-image: url(../images/icons/check.svg);
-      background-repeat: no-repeat;
-      background-position: center;
-      border-color: $dark-500;
-    }
-  }
-
-  &__checkbox {
-    display: block;
-    width: 24px;
-    height: 24px;
-    border: 1px solid $silver;
-    background-color: $silver-100;
-    position: absolute;
-    border-radius: 3px;
-    left: 18px;
-    top: -2px;
+    transition: border-color 0.4s;
   }
 }
 
@@ -1939,6 +1915,7 @@
     background-color: $silver-100;
     border: 1px solid $silver;
     margin: 0 3px;
+    transition: box-shadow 0.5s;
   }
 
   &__box {
@@ -2008,6 +1985,10 @@
     font-weight: 400;
     color: $dark-500;
     margin-right: 15px;
+
+    &:focus {
+      box-shadow: 0px 0px 0px 3px $green-200;
+    }
   }
 
   &__select-show {
@@ -2028,6 +2009,13 @@
     border-radius: 3px;
     margin-right: 15px;
     background-color: $silver-100;
+    transition: box-shadow 0.5s, fill 0.5s;
+    outline: 0;
+
+    &:focus,
+    &:hover {
+      box-shadow: 0 0 0 3px $green-200;
+    }
 
     &--active {
       .filter-content__svg {
@@ -2055,7 +2043,12 @@
 
   .jq-selectbox.focused .jq-selectbox__select {
     border-radius: 0;
+    border-color: $silver;
+  }
+
+  .jq-selectbox.opened .jq-selectbox__select {
     border-color: $dark-500;
+    outline: 0;
   }
 
   .jq-selectbox .placeholder {
@@ -2101,6 +2094,7 @@
     padding: 15px 13px 15px 8px;
     background-color: $white;
     color: $dark-500;
+    transition: background-color 0.5s;
   }
 
   .jq-selectbox li.sel {
@@ -2111,5 +2105,20 @@
     border-radius: 0 0 6px 6px;
     border: 1px solid $silver;
   }
+
+  .select-style {
+    transition: box-shadow 0.5s, border-color 0.5s;
+  }
+
+  .select-style.focused {
+    box-shadow: 0 0 0 3px $green-200;
+    outline: 0;
+    border-color: $silver;
+  }
+
+  .jq-selectbox li:hover {
+    background-color: $green-200;
+  }
+
 
 }
