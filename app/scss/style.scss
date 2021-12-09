@@ -28,6 +28,13 @@
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 55;
+  transition: top 0.2s ease-in-out;
+
+
   &__top {
     font-weight: 700;
     background-color: $dark-800;
@@ -131,6 +138,10 @@
     margin-bottom: 4px;
   }
 
+  @include max-w($xs) {
+    margin-bottom: 0;
+  }
+
   &__btn {
     width: 240px;
     background-color: $white;
@@ -159,6 +170,11 @@
       font-size: 18px;
       padding: 18px 14px 18px 61px;
     }
+
+    @include max-w($xs) {
+      padding: 15px 8px 15px 56px;
+    }
+
 
     &:focus {
       box-shadow: 0 0 0 4px $green-200;
@@ -272,7 +288,6 @@
 
   @include max-w($md) {
     margin-right: 28px;
-    border: 1px solid $dark-900;
   }
 
   @include max-w($sm) {
@@ -282,6 +297,7 @@
     left: 0;
     top: 78px;
     margin-right: 0;
+    border: 1px solid $dark-900;
   }
 
   @include max-w($xs) {
@@ -313,7 +329,7 @@
       padding: 14px 20px 15px 41px;
     }
 
-    @include max-w($md) {
+    @include max-w($sm) {
       border-radius: 0;
     }
 
@@ -612,6 +628,11 @@
     margin-bottom: 48px;
   }
 
+  &--catalog {
+    padding: 48px 0 29px;
+    margin-bottom: 0;
+  }
+
   &__list {
     display: flex;
     justify-content: center;
@@ -666,7 +687,6 @@
       max-width: 100%;
     }
   }
-
 }
 
 .filter-mix {
@@ -702,6 +722,7 @@
     outline: 0;
     border-radius: 3px;
     transition: box-shadow 0.4s, color 0.4s;
+
 
     &:focus {
       box-shadow: 0 0 0 3px $green-200;
@@ -895,22 +916,7 @@
 //   }
 // }
 
-.product-card__buy {
-  position: absolute;
-  bottom: 24px;
-  right: 24px;
 
-  @include max-w($xs) {
-    bottom: 12px;
-    right: 12px;
-
-    .counter-block__box {
-      position: absolute;
-      bottom: 46px;
-      left: 13%;
-    }
-  }
-}
 
 .pricing {
   position: relative;
@@ -1007,6 +1013,84 @@
 
   }
 
+  &__menu {
+    position: relative;
+
+    @include max-w($sm) {
+      &::before {
+        position: absolute;
+        content: '';
+        width: 100vw;
+        left: 50%;
+        bottom: -10px;
+        height: 1px;
+        background-color: $white;
+        opacity: 0.1;
+        transform: translate(-50%);
+      }
+    }
+
+    @include max-w($sm) {
+      margin-bottom: 30px;
+    }
+
+    @include max-w($lg) {
+      max-width: 560px;
+    }
+  }
+
+  &__menu-list {
+    column-count: 3;
+    column-gap: 75px;
+
+    @include max-w($lg) {
+      column-gap: 36px;
+    }
+
+    @include max-w($sm) {
+      column-count: 2;
+      column-gap: 0;
+    }
+  }
+
+  &__menu-item {
+    margin-bottom: 18px;
+
+    @include max-w($sm) {
+      margin-left: 40px;
+    }
+  }
+
+  &__menu-link {
+    position: relative;
+    font-weight: 400;
+    color: $white;
+    outline: 0;
+    border-radius: 6px;
+    transition: box-shadow 0.5s, color 0.4s, opacity 0.4s;
+
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      right: 0;
+      top: -50%;
+      padding: 22px
+    }
+
+    &:focus {
+      background-color: rgba($dark-900, 0.1);
+      box-shadow: 0 0 0 3px $green-100;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      color: $green-200;
+    }
+  }
 
   &__content {
     display: flex;
@@ -1155,87 +1239,6 @@
   }
 }
 
-.footer-menu {
-  position: relative;
-
-  @include max-w($sm) {
-    &::before {
-      position: absolute;
-      content: '';
-      width: 100vw;
-      left: 50%;
-      bottom: -10px;
-      height: 1px;
-      background-color: $white;
-      opacity: 0.1;
-      transform: translate(-50%);
-    }
-  }
-
-
-  @include max-w($sm) {
-    margin-bottom: 30px;
-  }
-
-  @include max-w($lg) {
-    max-width: 560px;
-  }
-
-  &__list {
-    column-count: 3;
-    column-gap: 75px;
-
-    @include max-w($lg) {
-      column-gap: 36px;
-    }
-
-    @include max-w($sm) {
-      column-count: 2;
-      column-gap: 0;
-    }
-
-  }
-
-  &__item {
-    margin-bottom: 18px;
-
-    @include max-w($sm) {
-      margin-left: 40px;
-    }
-  }
-
-  &__link {
-    position: relative;
-    font-weight: 400;
-    color: $white;
-    outline: 0;
-    border-radius: 6px;
-    transition: box-shadow 0.5s, color 0.4s, opacity 0.4s;
-
-    &:before {
-      position: absolute;
-      content: '';
-      left: 0;
-      right: 0;
-      top: -50%;
-      padding: 22px
-    }
-
-    &:focus {
-      background-color: rgba($dark-900, 0.1);
-      box-shadow: 0 0 0 3px $green-100;
-    }
-
-    &:hover {
-      opacity: 0.7;
-    }
-
-    &:active {
-      color: $green-200;
-    }
-  }
-}
-
 .contacts {
   font-weight: 400;
   max-width: 214px;
@@ -1311,6 +1314,10 @@
     justify-content: center;
   }
 
+  &--rightside-menu {
+    justify-content: flex-start;
+  }
+
   &__link {
     padding: 4px 7px 4px 5px;
     display: block;
@@ -1336,6 +1343,10 @@
     height: 32px;
     transition: opacity 0.5s;
     fill: $white;
+
+    &--black {
+      fill: $dark-900;
+    }
   }
 
 }
@@ -1466,6 +1477,7 @@
 
   @include max-w($xs) {
     padding: 48px 0;
+    margin-bottom: 50px;
   }
 
   &__list {
@@ -1531,8 +1543,6 @@
     @include truncate(3, 1.4);
   }
 
-
-
   &__ratings {
     position: absolute;
     right: 14px;
@@ -1540,14 +1550,16 @@
   }
 }
 
-.brands {
+.brands-slider {
   margin-bottom: 64px;
   overflow-x: hidden;
-}
 
-.brands-slider {
+  @include max-w($xs) {
 
-  &__inner {
+    margin-bottom: 40px;
+  }
+
+  &__list {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1573,7 +1585,6 @@
     justify-content: center;
     align-items: center;
   }
-
 }
 
 .news {
@@ -1692,6 +1703,7 @@
     max-width: 410px;
     width: 100%;
     max-height: 348px;
+    padding-bottom: 15px;
     background-repeat: no-repeat;
     background-position: center top;
     background-size: auto;
@@ -1701,10 +1713,8 @@
       padding-bottom: 15px;
     }
 
-    &:hover {
-      .news-card__title {
-        color: $green-900;
-      }
+    &:hover .news-card__title {
+      color: $green-900;
     }
 
   }
@@ -1736,7 +1746,7 @@
 
   &__title {
     font-weight: 600;
-    padding: 18px;
+    padding: 18px 18px 0 18px;
     font-size: 16px;
     line-height: 1.5;
     transition: color 0.5s;
@@ -1745,7 +1755,7 @@
     @include max-w($xs) {
       font-size: 14px;
       padding: 15px 15px 0;
-      @include truncate(2, 1.4);
+      @include truncate(3, 1.4);
     }
   }
 }
@@ -1758,23 +1768,69 @@
     line-height: 1.2;
     text-transform: none;
     margin-bottom: 48px;
+
+    @include max-w($xs) {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
   }
 
   &__inner {
     display: flex;
+    position: relative;
   }
+
+  &__close-btn {
+    display: none;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 11px;
+    top: -40px;
+    background-image: url(../images/icons/close-btn.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 100;
+
+    &--active {
+      @include max-w($sm) {
+        display: block;
+      }
+    }
+  }
+
 }
 
 .filters {
   max-width: 300px;
   width: 100%;
   margin-right: 30px;
+  z-index: 25;
+
+  @include max-w($md) {
+    position: absolute;
+    transform: translateX(-200%);
+    transition: transform 0.5s ease;
+
+    &--active {
+      transform: translateX(0);
+      transition: transform 0.5s ease;
+      background-color: $white;
+
+      @include max-w($sm) {
+        max-width: 100%;
+        top: -5px;
+      }
+    }
+  }
 }
 
 .filter {
   margin-bottom: 30px;
 
   &__btn {
+    position: relative;
     width: 100%;
     font-size: 24px;
     font-weight: 400;
@@ -1784,9 +1840,28 @@
     text-align: left;
     border: 1px solid $silver;
     border-radius: 6px 6px 0 0;
-    padding: 17px 0 17px 18px;
+    padding: 16px 0 17px 18px;
     outline: 0;
     transition: box-shadow 0.5s, background-color 0.5s;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 18px;
+      height: 18px;
+      background-size: 100%;
+      background-image: url(../images/icons/chevron.svg);
+      right: 22px;
+      top: 15px;
+      background-repeat: no-repeat;
+      transform: rotate(180deg);
+      transition: transform 0.5s;
+    }
+
+    &--active::after {
+      transform: translateY(50%) rotate(0);
+    }
+
 
     &:focus {
       box-shadow: 0 0 0 4px $green-200;
@@ -1869,10 +1944,8 @@
     font-weight: 400;
     position: relative;
 
-    &:hover {
-      .filter__checkbox {
-        border-color: $dark-500;
-      }
+    &:hover .filter__checkbox {
+      border-color: $dark-500;
     }
   }
 
@@ -1963,7 +2036,6 @@
   }
 }
 
-
 .catalog-content {
   width: 100%;
 
@@ -1971,22 +2043,82 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 18px;
+
+    @include max-w($xl) {
+      justify-content: center;
+
+      &--wide {
+        justify-content: space-around;
+      }
+    }
+
+    @include max-w($md) {
+      justify-content: space-around;
+    }
+
+    @include max-w($sm) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 10px;
+    }
+
+    @include max-w($xs) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      grid-gap: 5px;
+      margin-bottom: 28px;
+    }
+
   }
 
   &__item {
     margin-bottom: 30px;
 
+    @include max-w($xl) {
+      max-width: 250px;
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+
+    @include max-w($md) {
+      margin-right: 7px;
+      margin-left: 7px;
+    }
+
+    @include max-w($sm) {
+      margin-right: 0;
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+
+    @include max-w($xs) {
+      max-width: 170px;
+    }
+
     &--list {
       max-width: 462px;
       width: 100%;
+
+      @include max-w($xl) {
+        max-width: 375px;
+      }
     }
   }
 
   &__bottom {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 73px;
+    margin-bottom: 72px;
     align-items: center;
+
+    @include max-w($lg) {
+      flex-direction: column;
+    }
+
+    @include max-w($xs) {
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -1995,34 +2127,50 @@
   justify-content: flex-end;
   margin-bottom: 46px;
 
+  @include max-w($xs) {
+    justify-content: flex-start;
+    margin-bottom: 30px;
+  }
+
   &__svg {
     width: 35px;
     height: 35px;
     fill: $silver;
   }
 
+  &__select-show,
   &__select-sort {
-    width: 150px;
-    height: 47px;
     line-height: 1.2;
     font-weight: 400;
     color: $dark-500;
     margin-right: 15px;
     position: relative;
+
+    @include max-w($xs) {
+      margin-right: 10px;
+    }
 
     &:focus {
       box-shadow: 0px 0px 0px 3px $green-200;
     }
   }
 
+  &__select-sort {
+    width: 150px;
+    height: 47px;
+
+    @include max-w($xs) {
+      width: 130px;
+    }
+  }
+
   &__select-show {
     width: 100px;
     height: 47px;
-    line-height: 1.2;
-    font-weight: 400;
-    color: $dark-500;
-    margin-right: 15px;
-    position: relative;
+
+    @include max-w($xs) {
+      width: 70px;
+    }
   }
 
   &__btn {
@@ -2037,32 +2185,31 @@
     transition: box-shadow 0.5s, fill 0.5s;
     outline: 0;
 
+    @include max-w($lg) {
+      display: none;
+    }
+
     &:focus,
     &:hover {
       box-shadow: 0 0 0 3px $green-200;
     }
 
-    &--active {
-      .filter-content__svg {
-        fill: $green-900;
-      }
+    &--active .filter-content__svg {
+      fill: $green-900;
     }
-
 
     &:last-child {
       margin-right: 0;
     }
   }
 
-
   .jq-selectbox {
     cursor: pointer;
   }
 
-
   .jq-selectbox__select {
     height: 47px;
-    padding: 0 27px 0 10px;
+    padding: 0 22px 0 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2098,6 +2245,10 @@
     line-height: 1.2;
     color: $dark-500;
     letter-spacing: 0.03em;
+
+    @include max-w($xs) {
+      font-size: 12px;
+    }
   }
 
   .jq-selectbox__trigger {
@@ -2117,6 +2268,10 @@
     right: 15px;
     transform: translateY(-50%);
     transition: transform 0.5s;
+
+    @include max-w($xs) {
+      right: 9px;
+    }
   }
 
   .jq-selectbox__dropdown {
@@ -2128,11 +2283,11 @@
     box-shadow: none;
     border: none;
     margin: 0;
-    width: 150px;
-  }
+    width: 100%;
 
-  .filter-content__select-show .jq-selectbox__dropdown {
-    width: 100px;
+    @include max-w($xs) {
+      font-size: 12px;
+    }
   }
 
   .jq-selectbox li {
@@ -2168,12 +2323,36 @@
 
 }
 
+.filters-btn {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 47px;
+  width: 47px;
+  border-radius: 3px;
+  margin-right: 15px;
+  background-color: $silver-100;
+  transition: box-shadow 0.5s, fill 0.5s;
+  outline: 0;
 
+  @include max-w($md) {
+    display: inline-flex;
+  }
 
+  &:focus,
+  &:hover {
+    box-shadow: 0 0 0 3px $green-200;
+  }
+
+  &--active .filter-content__svg {
+    fill: $green-900;
+  }
+}
 
 
 .product-card {
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   position: relative;
   border: 1px solid rgba($dark-900, 0.2);
   border-radius: 6px;
@@ -2184,16 +2363,75 @@
   }
 
   @include max-w($xs) {
-    max-width: 175px;
+    max-width: 170px;
   }
 
   &:hover {
     border-color: $green-900;
   }
 
+  &--grid {
+    @include max-w($md) {
+      max-width: 232px;
+    }
+
+    @include max-w($xs) {
+      max-width: 170px;
+    }
+
+    .product-card__bottom {
+      height: 122px;
+      padding: 5px 18px 18px 18px;
+
+      @include max-w($sm) {
+        height: 150px;
+      }
+
+      @include max-w($xs) {
+        height: 159px;
+        padding: 8px 15px 8px 11px;
+      }
+
+      .product-card__btn {
+        @include max-w($xs) {
+          right: 6px;
+          top: 9px;
+        }
+      }
+
+    }
+
+    .product-card__img {
+      @include max-w($sm) {
+        height: 120px;
+      }
+
+      @include max-w($xs) {
+        height: 113px;
+      }
+    }
+
+    .form-buy__box {
+      @include max-w($sm) {
+        bottom: 40px;
+      }
+    }
+
+    .availability {
+      @include max-w($xs) {
+        font-size: 8px;
+      }
+    }
+
+    .product-card__status {
+      @include max-w($xs) {
+        padding: 0 12px;
+      }
+    }
+  }
+
   &--list {
     max-width: 462px;
-    width: 100%;
     height: 162px;
     display: flex;
 
@@ -2204,12 +2442,21 @@
     .product-card__img {
       max-width: 200px;
       height: 162px;
+
+      @include max-w($xl) {
+        max-width: 150px;
+      }
     }
 
     .product-card__status {
       order: 3;
       width: 100%;
       padding: 0;
+    }
+
+    .product-card__info {
+      top: 5px;
+      left: 7px;
     }
 
     .product-card__bottom {
@@ -2220,22 +2467,39 @@
 
     .product-card__center {
       width: 100%;
-      padding: 11px 18px 0 0;
+      padding: 11px 15px 0 21px;
+
+      @include max-w($xl) {
+        padding: 11px 7px 0 0;
+      }
+
     }
 
     .product-card__name {
       max-width: 162px;
+
+      @include max-w($xl) {
+        max-width: 142px;
+      }
     }
 
     .product-card__buy {
       bottom: 12px;
       right: 18px;
+
+      @include max-w($xl) {
+        right: 8px;
+      }
     }
 
     .product-card__btn {
       top: 50%;
       transform: translateY(-50%);
       right: 11px;
+
+      @include max-w($xl) {
+        right: 2px;
+      }
     }
   }
 
@@ -2243,8 +2507,8 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 12px;
+    left: 13px;
   }
 
   &__btn {
@@ -2252,24 +2516,20 @@
     outline: 0;
     position: absolute;
     z-index: 7;
-    right: 15px;
-    top: 15px;
+    right: 8px;
+    top: 12px;
 
     &:focus {
       box-shadow: 0 0 0 3px $green-200;
       border-radius: 3px;
     }
 
-    &:hover {
-      .product-card__svg {
-        fill: $orange;
-      }
+    &:hover .product-card__svg {
+      fill: $orange;
     }
 
-    &:active {
-      .product-card__svg {
-        fill: $yellow;
-      }
+    &:active .product-card__svg {
+      fill: $yellow;
     }
   }
 
@@ -2334,12 +2594,27 @@
       background-repeat: no-repeat;
       background-size: auto;
       background-position: center;
-      width: 20px;
-      height: 20px;
       transition: opacity 0.5s;
 
       @include max-w($sm) {
         background-size: auto;
+      }
+    }
+  }
+
+  &__buy {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+
+    @include max-w($xs) {
+      bottom: 12px;
+      right: 12px;
+
+      .form-buy__box {
+        position: absolute;
+        bottom: 46px;
+        left: 13%;
       }
     }
   }
@@ -2360,9 +2635,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 9px 18px 18px 18px;
+    padding: 22px 18px 18px 18px;
     text-align: left;
-    height: 133px;
+    height: 143px;
 
     @include max-w($sm) {
       padding: 8px 12px 12px 12px;

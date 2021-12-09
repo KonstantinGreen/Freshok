@@ -21,7 +21,7 @@
 
 <body>
 
-  <header class="header">
+  <header class="header" id="header">
 
     <nav class="header__nav">
       <div class="header__top">
@@ -35,8 +35,9 @@
             </button>
 
             <div class="rightside-menu rightside-menu--close">
-              <a class="logo" href="#">
-                <img class="logo__img" src="images/icons/logo-green.svg" alt="лого" width="200" height="60">
+              <a class="rightside-menu__logo" href="#">
+                <img class="rightside-menu__logo-img" src="images/icons/logo-green.svg" alt="лого" width="200"
+                  height="60">
               </a>
 
               <button class="rightside-menu__close" type="button">
@@ -46,9 +47,8 @@
               </button>
 
               <div class="rightside-menu__authorization">
-                <a class="rigthside-menu__link rigthside-menu__link--authorization" href="#">Вход</a>
-                <span class="rightside-menu__span">|</span>
-                <a class="rigthside-menu__link rigthside-menu__link--authorization" href="#"> Регистрация</a>
+                <a class="rightside-menu__link rightside-menu__link--authorization" href="#">Вход</a>
+                <a class="rightside-menu__link rightside-menu__link--authorization" href="#"> Регистрация</a>
               </div>
 
               <div class="drop">
@@ -117,7 +117,7 @@
               <div class="rightside-menu__contacts">
                 <address class="rightside-menu__info">
                   <div class="rightside-menu__info-item rightside-menu__info-item--tel">
-                    <a class="rigthside-menu__link rigthside-menu__link--info" href="tel:+7907288365">+7 907
+                    <a class="rightside-menu__link rightside-menu__link--info" href="tel:+7907288365">+7 907
                       288 365</a>
                   </div>
                   <div class="rightside-menu__info-item rightside-menu__info-item--location">
@@ -125,93 +125,98 @@
                   </div>
                 </address>
 
-                <ul class="rightside-menu__social">
-                  <li class="rightside-menu__social-item">
-                    <a class="rigthside-menu__link rigthside-menu__link--social" href="#" target="_blank">
-                      <svg class="rightside-menu__social-svg">
+                <ul class="social social--rightside-menu">
+                  <li class="social__item">
+                    <a class="social__link" href="#" target="_blank" width="32" height="32">
+                      <svg class="social__svg social__svg--black">
                         <use xlink:href="images/sprite.svg#facebook"></use>
                       </svg>
                       <span class="sr-only">Посмотреть facebook</span>
                     </a>
                   </li>
-                  <li class="rightside-menu__social-item">
-                    <a class="rigthside-menu__link rigthside-menu__link--social" href="#" target="_blank">
-                      <svg class="rightside-menu__social-svg">
+
+                  <li class="social__item">
+                    <a class="social__link" href="#" target="_blank" width="32" height="32">
+                      <svg class="social__svg social__svg--black">
                         <use xlink:href="images/sprite.svg#youtube"></use>
                       </svg>
                       <span class="sr-only">Посмотреть youtube</span>
                     </a>
                   </li>
-                  <li class="rightside-menu__social-item">
-                    <a class="rigthside-menu__link rigthside-menu__link--social" href="#" target="_blank">
-                      <svg class="rightside-menu__social-svg">
+
+                  <li class="social__item">
+                    <a class="social__link" href="#" target="_blank" width="32" height="32">
+                      <svg class="social__svg social__svg--black">
                         <use xlink:href="images/sprite.svg#telegram"></use>
                       </svg>
                       <span class="sr-only">Посмотреть telegram</span>
                     </a>
                   </li>
-                  <li class="rightside-menu__social-item">
-                    <a class="rigthside-menu__link rigthside-menu__link--social" href="#" target="_blank">
-                      <svg class="rightside-menu__social-svg">
+
+                  <li class="social__item">
+                    <a class="social__link" href="#" target="_blank" width="32" height="32">
+                      <svg class="social__svg social__svg--black">
                         <use xlink:href="images/sprite.svg#instagram"></use>
                       </svg>
                       <span class="sr-only">Посмотреть instagram</span>
                     </a>
                   </li>
+
                 </ul>
+
+
+
               </div>
 
               <nav class="rightside-menu__navigation">
                 <ul class="rightside-menu__navigation-list">
                   <li class="rightside-menu__navigation-item">
-                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                    <a class="rightside-menu__link rightside-menu__link--navigation" href="#">
                       Доставка
                     </a>
                   </li>
 
                   <li class="rightside-menu__navigation-item">
-                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                    <a class="rightside-menu__link rightside-menu__link--navigation" href="#">
                       О нас
                     </a>
                   </li>
 
                   <li class="rightside-menu__navigation-item">
-                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                    <a class="rightside-menu__link rightside-menu__link--navigation" href="#">
                       Новости
                     </a>
                   </li>
 
                   <li class="rightside-menu__navigation-item">
-                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                    <a class="rightside-menu__link rightside-menu__link--navigation" href="#">
                       Контакты
                     </a>
                   </li>
 
                   <li class="rightside-menu__navigation-item">
-                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                    <a class="rightside-menu__link rightside-menu__link--navigation" href="#">
                       Акции
                     </a>
                   </li>
 
                   <li class="rightside-menu__navigation-item">
-                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                    <a class="rightside-menu__link rightside-menu__link--navigation" href="#">
                       Вакансии
                     </a>
                   </li>
 
                   <li class="rightside-menu__navigation-item">
-                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                    <a class="rightside-menu__link rightside-menu__link--navigation" href="#">
                       Отзывы
                     </a>
                   </li>
 
                   <li class="rightside-menu__navigation-item">
-                    <a class="rigthside-menu__link rigthside-menu__link--navigation" href="#">
+                    <a class="rightside-menu__link rightside-menu__link--navigation" href="#">
                       Публичная оферта
                     </a>
                   </li>
-
-
 
                 </ul>
               </nav>
@@ -271,8 +276,8 @@
 
             <a class="logo" href="#">
               <picture class="logo__img">
-                <source srcset="images/icons/logo-mobile.svg" media="(max-width:480px)">
-                <img src="images/icons/logo.svg" alt="logo">
+                <source srcset="images/icons/logo.svg" media="(min-width:481px)">
+                <img src="images/icons/logo-mobile.svg" alt="logo">
               </picture>
             </a>
 
@@ -342,36 +347,42 @@
               </ul>
             </div>
 
+
             <form class="form-search">
-              <label class="sr-only" for="form-search__input">Поиск / Введите название товара</label>
+              <label class="sr-only" for="form-search__input">Введите название товара в поиск</label>
               <input class="form-search__input" id="form-search__input" name="form-search"
                 placeholder="Найти в магазине ..." type="search" required>
               <button class="btn btn--search" type="submit">Поиск</button>
             </form>
 
             <ul class="user-nav">
+
               <li class="user-nav__item">
                 <button class="general-btn general-btn--search" type="button">
                   <span class="sr-only">Поиск</span>
                 </button>
               </li>
+
               <li class="user-nav__item">
                 <button class="general-btn general-btn--user" type="button">
                   <span class="sr-only">Открыть меню пользователя</span>
                 </button>
               </li>
+
               <li class="user-nav__item">
                 <button class="general-btn general-btn--favorites" type="button">
                   <span class="sr-only">Открыть избранное</span>
                   <span class="general-btn__num">12</span>
                 </button>
               </li>
+
               <li class="user-nav__item">
                 <button class="general-btn general-btn--basket" type="button">
                   <span class="sr-only">Открыть корзину</span>
                   <span class="general-btn__num">12</span>
                 </button>
               </li>
+
             </ul>
 
           </div>
@@ -382,7 +393,8 @@
     </nav>
   </header>
 
-  <main class="main">
+
+  <main class="main" id="main">
 
     <div class="breadcrumbs">
       <div class="container">
@@ -401,6 +413,7 @@
       <div class="container">
         <h2 class="catalog__title">Каталог товаров</h2>
         <div class="catalog__inner">
+          <button class="catalog__close-btn"></button>
           <ul class="filters">
             <li class="filter filter-category">
               <button class="filter__btn" type="button" id="filter-category-btn">
@@ -607,7 +620,7 @@
                       </div>
                     </div>
                     <label class="filter-price__label">
-                      <input class="filter-price__input" type="text" data-min="0" data-max="1250" data-from="200"
+                      <input class="filter-price__input" type="text" data-min="0" data-max="1050" data-from="100"
                         data-to="1000">
                       <span class="filter-price__checkbox"></span>
                     </label>
@@ -623,6 +636,11 @@
 
           <div class="catalog-content">
             <div class="filter-content">
+              <button class="filters-btn" id="filters-btn">
+                <svg class="filter-content__svg">
+                  <use xlink:href="images/sprite.svg#filters-btn"></use>
+                </svg>
+              </button>
               <div class="filter-content__selects">
                 <form class="filter-content__filter-form" action="#">
                   <select class="filter-content__select-sort select-style" id="filter-content__select-sort">
@@ -646,7 +664,7 @@
                     <use xlink:href="images/sprite.svg#list"></use>
                   </svg>
                 </button>
-                <button class="filter-content__btn filter-content__btn--active" id="filter-btn-grid">
+                <button class="filter-content__btn  filter-content__btn--active" id="filter-btn-grid">
                   <svg class="filter-content__svg">
                     <use xlink:href="images/sprite.svg#grid"></use>
                   </svg>
@@ -680,7 +698,7 @@
                       <div class="availability">
                         в наличии
                       </div>
-                      <div class="rating">
+                      <div class="rating rating--catalog">
                         <span class="rating__num">3.5</span>
                         <svg class="rating__svg">
                           <use xlink:href="images/sprite.svg#star"></use>
@@ -703,19 +721,20 @@
 
                   <div class="product-card__buy">
                     <form class="form-buy">
-                      <div class="counter-block">
-                        <div class="counter-block__box">
-                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                            <span class="sr-only">минус</span>
-                          </button>
-                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
-                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
-                            type="nubmer" value="1" step="1" min="1" max="99">
-                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                            <span class="sr-only">плюс</span>
-                          </button>
-                        </div>
+
+                      <div class="form-buy__box">
+                        <button class="form-buy__btn form-buy__btn--minus" type="button">-
+                          <span class="sr-only">минус</span>
+                        </button>
+                        <label class="sr-only" for="counter-merchandise">Введите колличество которое хотите
+                          купить</label>
+                        <input class="form-buy__num" name="counter-merchandise" id="counter-merchandise" type="nubmer"
+                          value="1" step="1" min="1" max="99">
+                        <button class="form-buy__btn form-buy__btn--plus" type="button">+
+                          <span class="sr-only">плюс</span>
+                        </button>
                       </div>
+
                       <button class="basket" type="submit">
                         <span class="sr-only">Добавить в корзину</span>
                         <svg class="basket__svg">
@@ -747,7 +766,7 @@
                       <div class="availability">
                         в наличии
                       </div>
-                      <div class="rating">
+                      <div class="rating rating--catalog">
                         <span class="rating__num">4.5</span>
                         <svg class="rating__svg">
                           <use xlink:href="images/sprite.svg#star"></use>
@@ -768,19 +787,20 @@
 
                   <div class="product-card__buy">
                     <form class="form-buy">
-                      <div class="counter-block">
-                        <div class="counter-block__box">
-                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                            <span class="sr-only">минус</span>
-                          </button>
-                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
-                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
-                            type="nubmer" value="1" step="1" min="1" max="99">
-                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                            <span class="sr-only">плюс</span>
-                          </button>
-                        </div>
+
+                      <div class="form-buy__box">
+                        <button class="form-buy__btn form-buy__btn--minus" type="button">-
+                          <span class="sr-only">минус</span>
+                        </button>
+                        <label class="sr-only" for="counter-merchandise">Введите колличество которое хотите
+                          купить</label>
+                        <input class="form-buy__num" name="counter-merchandise" id="counter-merchandise" type="nubmer"
+                          value="1" step="1" min="1" max="99">
+                        <button class="form-buy__btn form-buy__btn--plus" type="button">+
+                          <span class="sr-only">плюс</span>
+                        </button>
                       </div>
+
                       <button class="basket" type="submit">
                         <span class="sr-only">Добавить в корзину</span>
                         <svg class="basket__svg">
@@ -815,7 +835,7 @@
                       <div class="availability">
                         в наличии
                       </div>
-                      <div class="rating">
+                      <div class="rating rating--catalog">
                         <span class="rating__num">4.5</span>
                         <svg class="rating__svg">
                           <use xlink:href="images/sprite.svg#star"></use>
@@ -836,19 +856,20 @@
 
                   <div class="product-card__buy">
                     <form class="form-buy">
-                      <div class="counter-block">
-                        <div class="counter-block__box">
-                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                            <span class="sr-only">минус</span>
-                          </button>
-                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
-                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
-                            type="nubmer" value="1" step="1" min="1" max="99">
-                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                            <span class="sr-only">плюс</span>
-                          </button>
-                        </div>
+
+                      <div class="form-buy__box">
+                        <button class="form-buy__btn form-buy__btn--minus" type="button">-
+                          <span class="sr-only">минус</span>
+                        </button>
+                        <label class="sr-only" for="counter-merchandise">Введите колличество которое хотите
+                          купить</label>
+                        <input class="form-buy__num" name="counter-merchandise" id="counter-merchandise" type="nubmer"
+                          value="1" step="1" min="1" max="99">
+                        <button class="form-buy__btn form-buy__btn--plus" type="button">+
+                          <span class="sr-only">плюс</span>
+                        </button>
                       </div>
+
                       <button class="basket" type="submit">
                         <span class="sr-only">Добавить в корзину</span>
                         <svg class="basket__svg">
@@ -883,7 +904,7 @@
                       <div class="availability availability--gray">
                         нет в наличии
                       </div>
-                      <div class="rating">
+                      <div class="rating rating--catalog">
                         <span class="rating__num">4.5</span>
                         <svg class="rating__svg">
                           <use xlink:href="images/sprite.svg#star"></use>
@@ -904,19 +925,20 @@
 
                   <div class="product-card__buy">
                     <form class="form-buy">
-                      <div class="counter-block">
-                        <div class="counter-block__box">
-                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                            <span class="sr-only">минус</span>
-                          </button>
-                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
-                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
-                            type="nubmer" value="1" step="1" min="1" max="99">
-                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                            <span class="sr-only">плюс</span>
-                          </button>
-                        </div>
+
+                      <div class="form-buy__box">
+                        <button class="form-buy__btn form-buy__btn--minus" type="button">-
+                          <span class="sr-only">минус</span>
+                        </button>
+                        <label class="sr-only" for="counter-merchandise">Введите колличество которое хотите
+                          купить</label>
+                        <input class="form-buy__num" name="counter-merchandise" id="counter-merchandise" type="nubmer"
+                          value="1" step="1" min="1" max="99">
+                        <button class="form-buy__btn form-buy__btn--plus" type="button">+
+                          <span class="sr-only">плюс</span>
+                        </button>
                       </div>
+
                       <button class="basket" type="submit">
                         <span class="sr-only">Добавить в корзину</span>
                         <svg class="basket__svg">
@@ -951,7 +973,7 @@
                       <div class="availability">
                         в наличии
                       </div>
-                      <div class="rating">
+                      <div class="rating rating--catalog">
                         <span class="rating__num">4.5</span>
                         <svg class="rating__svg">
                           <use xlink:href="images/sprite.svg#star"></use>
@@ -975,19 +997,20 @@
 
                   <div class="product-card__buy">
                     <form class="form-buy">
-                      <div class="counter-block">
-                        <div class="counter-block__box">
-                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                            <span class="sr-only">минус</span>
-                          </button>
-                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
-                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
-                            type="nubmer" value="1" step="1" min="1" max="99">
-                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                            <span class="sr-only">плюс</span>
-                          </button>
-                        </div>
+
+                      <div class="form-buy__box">
+                        <button class="form-buy__btn form-buy__btn--minus" type="button">-
+                          <span class="sr-only">минус</span>
+                        </button>
+                        <label class="sr-only" for="counter-merchandise">Введите колличество которое хотите
+                          купить</label>
+                        <input class="form-buy__num" name="counter-merchandise" id="counter-merchandise" type="nubmer"
+                          value="1" step="1" min="1" max="99">
+                        <button class="form-buy__btn form-buy__btn--plus" type="button">+
+                          <span class="sr-only">плюс</span>
+                        </button>
                       </div>
+
                       <button class="basket" type="submit">
                         <span class="sr-only">Добавить в корзину</span>
                         <svg class="basket__svg">
@@ -1023,7 +1046,7 @@
                       <div class="availability availability--red">
                         Заканчивается
                       </div>
-                      <div class="rating">
+                      <div class="rating rating--catalog">
                         <span class="rating__num">4.5</span>
                         <svg class="rating__svg">
                           <use xlink:href="images/sprite.svg#star"></use>
@@ -1033,7 +1056,7 @@
 
                     <div class="product-card__bottom">
                       <h3 class="product-card__name">
-                        Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкогольн...
+                        Кофе с коноплей органический Caffé Salomoni 250г
                       </h3>
                       <div class="pricing">
                         <span class="pricing__newprice">877<span> ₽</span>
@@ -1045,19 +1068,20 @@
 
                   <div class="product-card__buy">
                     <form class="form-buy">
-                      <div class="counter-block">
-                        <div class="counter-block__box">
-                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                            <span class="sr-only">минус</span>
-                          </button>
-                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
-                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
-                            type="nubmer" value="1" step="1" min="1" max="99">
-                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                            <span class="sr-only">плюс</span>
-                          </button>
-                        </div>
+
+                      <div class="form-buy__box">
+                        <button class="form-buy__btn form-buy__btn--minus" type="button">-
+                          <span class="sr-only">минус</span>
+                        </button>
+                        <label class="sr-only" for="counter-merchandise">Введите колличество которое хотите
+                          купить</label>
+                        <input class="form-buy__num" name="counter-merchandise" id="counter-merchandise" type="nubmer"
+                          value="1" step="1" min="1" max="99">
+                        <button class="form-buy__btn form-buy__btn--plus" type="button">+
+                          <span class="sr-only">плюс</span>
+                        </button>
                       </div>
+
                       <button class="basket" type="submit">
                         <span class="sr-only">Добавить в корзину</span>
                         <svg class="basket__svg">
@@ -1093,7 +1117,7 @@
                       <div class="availability availability--red">
                         Заканчивается
                       </div>
-                      <div class="rating">
+                      <div class="rating rating--catalog">
                         <span class="rating__num">4.5</span>
                         <svg class="rating__svg">
                           <use xlink:href="images/sprite.svg#star"></use>
@@ -1115,19 +1139,20 @@
 
                   <div class="product-card__buy">
                     <form class="form-buy">
-                      <div class="counter-block">
-                        <div class="counter-block__box">
-                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                            <span class="sr-only">минус</span>
-                          </button>
-                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
-                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
-                            type="nubmer" value="1" step="1" min="1" max="99">
-                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                            <span class="sr-only">плюс</span>
-                          </button>
-                        </div>
+
+                      <div class="form-buy__box">
+                        <button class="form-buy__btn form-buy__btn--minus" type="button">-
+                          <span class="sr-only">минус</span>
+                        </button>
+                        <label class="sr-only" for="counter-merchandise">Введите колличество которое хотите
+                          купить</label>
+                        <input class="form-buy__num" name="counter-merchandise" id="counter-merchandise" type="nubmer"
+                          value="1" step="1" min="1" max="99">
+                        <button class="form-buy__btn form-buy__btn--plus" type="button">+
+                          <span class="sr-only">плюс</span>
+                        </button>
                       </div>
+
                       <button class="basket" type="submit">
                         <span class="sr-only">Добавить в корзину</span>
                         <svg class="basket__svg">
@@ -1161,7 +1186,7 @@
                       <div class="availability">
                         в наличии
                       </div>
-                      <div class="rating">
+                      <div class="rating rating--catalog">
                         <span class="rating__num">4.5</span>
                         <svg class="rating__svg">
                           <use xlink:href="images/sprite.svg#star"></use>
@@ -1183,19 +1208,20 @@
 
                   <div class="product-card__buy">
                     <form class="form-buy">
-                      <div class="counter-block">
-                        <div class="counter-block__box">
-                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                            <span class="sr-only">минус</span>
-                          </button>
-                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
-                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
-                            type="nubmer" value="1" step="1" min="1" max="99">
-                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                            <span class="sr-only">плюс</span>
-                          </button>
-                        </div>
+
+                      <div class="form-buy__box">
+                        <button class="form-buy__btn form-buy__btn--minus" type="button">-
+                          <span class="sr-only">минус</span>
+                        </button>
+                        <label class="sr-only" for="counter-merchandise">Введите колличество которое хотите
+                          купить</label>
+                        <input class="form-buy__num" name="counter-merchandise" id="counter-merchandise" type="nubmer"
+                          value="1" step="1" min="1" max="99">
+                        <button class="form-buy__btn form-buy__btn--plus" type="button">+
+                          <span class="sr-only">плюс</span>
+                        </button>
                       </div>
+
                       <button class="basket" type="submit">
                         <span class="sr-only">Добавить в корзину</span>
                         <svg class="basket__svg">
@@ -1231,7 +1257,7 @@
                       <div class="availability">
                         в наличии
                       </div>
-                      <div class="rating">
+                      <div class="rating rating--catalog">
                         <span class="rating__num">3.5</span>
                         <svg class="rating__svg">
                           <use xlink:href="images/sprite.svg#star"></use>
@@ -1254,19 +1280,20 @@
 
                   <div class="product-card__buy">
                     <form class="form-buy">
-                      <div class="counter-block">
-                        <div class="counter-block__box">
-                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                            <span class="sr-only">минус</span>
-                          </button>
-                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
-                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
-                            type="nubmer" value="1" step="1" min="1" max="99">
-                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                            <span class="sr-only">плюс</span>
-                          </button>
-                        </div>
+
+                      <div class="form-buy__box">
+                        <button class="form-buy__btn form-buy__btn--minus" type="button">-
+                          <span class="sr-only">минус</span>
+                        </button>
+                        <label class="sr-only" for="counter-merchandise">Введите колличество которое хотите
+                          купить</label>
+                        <input class="form-buy__num" name="counter-merchandise" id="counter-merchandise" type="nubmer"
+                          value="1" step="1" min="1" max="99">
+                        <button class="form-buy__btn form-buy__btn--plus" type="button">+
+                          <span class="sr-only">плюс</span>
+                        </button>
                       </div>
+
                       <button class="basket" type="submit">
                         <span class="sr-only">Добавить в корзину</span>
                         <svg class="basket__svg">
@@ -1301,7 +1328,7 @@
                       <div class="availability availability--gray">
                         нет в наличии
                       </div>
-                      <div class="rating">
+                      <div class="rating rating--catalog">
                         <span class="rating__num">4.5</span>
                         <svg class="rating__svg">
                           <use xlink:href="images/sprite.svg#star"></use>
@@ -1322,19 +1349,20 @@
 
                   <div class="product-card__buy">
                     <form class="form-buy">
-                      <div class="counter-block">
-                        <div class="counter-block__box">
-                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                            <span class="sr-only">минус</span>
-                          </button>
-                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
-                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
-                            type="nubmer" value="1" step="1" min="1" max="99">
-                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                            <span class="sr-only">плюс</span>
-                          </button>
-                        </div>
+
+                      <div class="form-buy__box">
+                        <button class="form-buy__btn form-buy__btn--minus" type="button">-
+                          <span class="sr-only">минус</span>
+                        </button>
+                        <label class="sr-only" for="counter-merchandise">Введите колличество которое хотите
+                          купить</label>
+                        <input class="form-buy__num" name="counter-merchandise" id="counter-merchandise" type="nubmer"
+                          value="1" step="1" min="1" max="99">
+                        <button class="form-buy__btn form-buy__btn--plus" type="button">+
+                          <span class="sr-only">плюс</span>
+                        </button>
                       </div>
+
                       <button class="basket" type="submit">
                         <span class="sr-only">Добавить в корзину</span>
                         <svg class="basket__svg">
@@ -1369,7 +1397,7 @@
                       <div class="availability">
                         в наличии
                       </div>
-                      <div class="rating">
+                      <div class="rating rating--catalog">
                         <span class="rating__num">4.5</span>
                         <svg class="rating__svg">
                           <use xlink:href="images/sprite.svg#star"></use>
@@ -1393,19 +1421,20 @@
 
                   <div class="product-card__buy">
                     <form class="form-buy">
-                      <div class="counter-block">
-                        <div class="counter-block__box">
-                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                            <span class="sr-only">минус</span>
-                          </button>
-                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
-                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
-                            type="nubmer" value="1" step="1" min="1" max="99">
-                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                            <span class="sr-only">плюс</span>
-                          </button>
-                        </div>
+
+                      <div class="form-buy__box">
+                        <button class="form-buy__btn form-buy__btn--minus" type="button">-
+                          <span class="sr-only">минус</span>
+                        </button>
+                        <label class="sr-only" for="counter-merchandise">Введите колличество которое хотите
+                          купить</label>
+                        <input class="form-buy__num" name="counter-merchandise" id="counter-merchandise" type="nubmer"
+                          value="1" step="1" min="1" max="99">
+                        <button class="form-buy__btn form-buy__btn--plus" type="button">+
+                          <span class="sr-only">плюс</span>
+                        </button>
                       </div>
+
                       <button class="basket" type="submit">
                         <span class="sr-only">Добавить в корзину</span>
                         <svg class="basket__svg">
@@ -1441,7 +1470,7 @@
                       <div class="availability availability--red">
                         Заканчивается
                       </div>
-                      <div class="rating">
+                      <div class="rating rating--catalog">
                         <span class="rating__num">4.5</span>
                         <svg class="rating__svg">
                           <use xlink:href="images/sprite.svg#star"></use>
@@ -1463,19 +1492,20 @@
 
                   <div class="product-card__buy">
                     <form class="form-buy">
-                      <div class="counter-block">
-                        <div class="counter-block__box">
-                          <button class="counter-block__btn counter-block__btn--minus" type="button">-
-                            <span class="sr-only">минус</span>
-                          </button>
-                          <label class="sr-only" for="counter-merchandise">Счетчик товаров</label>
-                          <input class="counter-block__num" name="counter-merchandise" id="counter-merchandise"
-                            type="nubmer" value="1" step="1" min="1" max="99">
-                          <button class="counter-block__btn counter-block__btn--plus" type="button">+
-                            <span class="sr-only">плюс</span>
-                          </button>
-                        </div>
+
+                      <div class="form-buy__box">
+                        <button class="form-buy__btn form-buy__btn--minus" type="button">-
+                          <span class="sr-only">минус</span>
+                        </button>
+                        <label class="sr-only" for="counter-merchandise">Введите колличество которое хотите
+                          купить</label>
+                        <input class="form-buy__num" name="counter-merchandise" id="counter-merchandise" type="nubmer"
+                          value="1" step="1" min="1" max="99">
+                        <button class="form-buy__btn form-buy__btn--plus" type="button">+
+                          <span class="sr-only">плюс</span>
+                        </button>
                       </div>
+
                       <button class="basket" type="submit">
                         <span class="sr-only">Добавить в корзину</span>
                         <svg class="basket__svg">
@@ -1492,11 +1522,13 @@
 
 
             <div class="catalog-content__bottom">
-              <button class="btn" type="button">Показать еще</button>
+              <button class="btn btn--catalog" type="button">Показать еще</button>
 
               <div class="pagination">
-                <a class="pagination__prev pagination__arrows" href="#">
-
+                <a class="pagination__arrows pagination__arrows--prev pagination__arrows--disabled" href="#">
+                  <svg class="pagination__svg">
+                    <use xlink:href="images/sprite.svg#chevron-left"></use>
+                  </svg>
                 </a>
                 <ul class="pagination__list">
 
@@ -1513,7 +1545,7 @@
                   </li>
 
                   <li class="pagination__item">
-                    <span class="pagination__link" href="#">
+                    <span class="pagination__link">
                       ....
                     </span>
                   </li>
@@ -1531,26 +1563,52 @@
                   </li>
 
                 </ul>
-                <a class="pagination__next pagination__arrows" href="#">
-
+                <a class="pagination__arrows pagination__arrows--next" href="#">
+                  <svg class="pagination__svg">
+                    <use xlink:href="images/sprite.svg#chevron-right"></use>
+                  </svg>
                 </a>
               </div>
-
             </div>
 
           </div>
 
-
-
         </div>
-
-
-
 
 
       </div>
     </section>
 
+    <div class="advantages advantages--catalog">
+      <div class="container">
+        <ul class="advantages__list">
+          <li class="advantages__item" style="background-image: url(images/icons/motorcycle.svg);">
+            <div class="advantages__function">
+              Бесплатная доставка
+            </div>
+            <span class="advantages__descr">
+              Для заказов на сумму от 500 ₽
+            </span>
+          </li>
+          <li class="advantages__item" style="background-image: url(images/icons/purchase-returns.svg);">
+            <div class="advantages__function">
+              Возврат товара
+            </div>
+            <span class="advantages__descr">
+              Если товары были испорчены
+            </span>
+          </li>
+          <li class="advantages__item" style="background-image: url(images/icons/support.svg);">
+            <div class="advantages__function">
+              Поддержка 24/7
+            </div>
+            <span class="advantages__descr">
+              Лучшие операторы
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
 
 
   </main>
@@ -1584,53 +1642,53 @@
 
         </div>
 
-        <nav class="footer-menu">
-          <ul class="footer-menu__list">
+        <nav class="footer__menu">
+          <ul class="footer__menu-list">
 
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">
                 О нас
               </a>
             </li>
 
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">
                 Контакты
               </a>
             </li>
 
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">
                 Публичная оферта
               </a>
             </li>
 
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">
                 Оплата и доставка
               </a>
             </li>
 
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">
                 Вакансии
               </a>
             </li>
 
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">
                 Акции
               </a>
             </li>
 
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">
                 Отзывы
               </a>
             </li>
 
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">
                 Новости
               </a>
             </li>
