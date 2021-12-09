@@ -1,0 +1,15 @@
+.availability {
+  font-size: 10px;
+  line-height: 1;
+  color: $green-900;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+
+  &--red {
+    color: $red;
+  }
+
+  &--gray {
+    color: $silver;
+  }
+}

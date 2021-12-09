@@ -13,6 +13,7 @@ const imagemin = require('gulp-imagemin');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 const svgSprite = require('gulp-svg-sprite');
+const fileInclude = require('gulp-file-include');
 
 
 
@@ -38,6 +39,16 @@ function browsersync() {
   });
 }
 
+
+const htmlInclude = () => {
+  return src(['app/html/*.html']) // Находит любой .html файл в папке "html", куда будем подключать другие .html файлы													
+    .pipe(fileInclude({
+      prefix: '@',
+      basepath: '@file',
+    }))
+    .pipe(dest('app')) // указываем, в какую папку поместить готовый файл html
+    .pipe(browserSync.stream());
+}
 
 
 
@@ -118,6 +129,7 @@ function watching() {
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
   watch(['app/**/*.html']).on('change', browserSync.reload);
   watch(['app/images/icons/**/*.svg'], svgsprite);
+  watch(['app/html/**/*.html'], htmlInclude);
 }
 
 exports.styles = styles;
@@ -128,5 +140,6 @@ exports.images = images;
 exports.cleanDist = cleanDist;
 exports.build = series(cleanDist, images, build);
 exports.svgSprite = svgSprite;
+exports.htmlInclude = htmlInclude;
 
-exports.default = parallel(styles, scripts, browsersync, svgsprite, watching);
+exports.default = parallel(htmlInclude, styles, scripts, browsersync, svgsprite, watching);

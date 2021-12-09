@@ -1,0 +1,60 @@
+.form-buy {
+  width: 132px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include max-w($xs) {
+    justify-content: flex-end;
+  }
+
+  &__box {
+    position: relative;
+    width: 84px;
+    font-size: 24px;
+    height: 24px;
+    text-align: center;
+    display: block;
+  }
+
+  &__num {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    width: 36px;
+    background-color: $green-200;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 24px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    border: 0;
+    outline: 0;
+
+    &:focus {
+      box-shadow: 0 0 0 0;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    font-size: 20px;
+    background-color: $green-900;
+    width: 24px;
+    height: 24px;
+
+    &--minus {
+      left: 0;
+    }
+
+    &--plus {
+      right: 0;
+    }
+  }
+}

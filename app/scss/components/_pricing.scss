@@ -1,0 +1,44 @@
+.pricing {
+  position: relative;
+  font-weight: 400;
+
+  &--promo {
+    display: flex;
+    align-items: flex-end;
+
+    .pricing__newprice {
+      margin-right: 12px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1;
+      color: $dark-500;
+    }
+
+    .pricing__oldprice {
+      font-size: 12px;
+      line-height: 1;
+      order: 2;
+    }
+  }
+
+  &__newprice {
+    display: block;
+
+  }
+
+  &__oldprice {
+    position: relative;
+    color: $silver;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      border-bottom: 1px solid $silver;
+      transform: rotate(-14.99deg);
+      width: 100%;
+      height: 50%;
+    }
+  }
+}

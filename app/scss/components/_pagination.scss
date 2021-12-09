@@ -1,0 +1,71 @@
+.pagination {
+  display: flex;
+
+  &__list {
+    display: flex;
+    margin: 0 6px;
+    align-items: center;
+  }
+
+  &__item {
+    @include max-w($xs) {
+
+      &:nth-last-child(0n+2),
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+
+  &__link,
+  &__arrows {
+    height: 48px;
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $silver-100;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    outline: 0;
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+    }
+
+    &:active {
+      border-color: $dark-500;
+    }
+  }
+
+  &__item {
+    margin-right: 6px;
+
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 1;
+    color: $dark-500;
+    letter-spacing: 0.03em;
+
+    &--active {
+      border-color: $dark-500;
+    }
+  }
+
+  &__svg {
+    width: 10px;
+    height: 18px;
+  }
+
+  &__arrows {
+    &--disabled {
+      fill: $silver;
+    }
+  }
+}
