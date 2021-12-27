@@ -1,0 +1,126 @@
+.cards-slider {
+  margin-bottom: 46px;
+
+  .product-card {
+    @include max-w($xs) {
+      width: 320px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__list {
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 0;
+    position: relative;
+    height: 460px;
+    justify-content: space-between;
+  }
+
+  .slick-slide {
+    width: 300px;
+  }
+
+  &__item {
+    min-width: 0;
+  }
+
+  &__title {
+    font-family: 'Ruda', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    @include max-w($xs) {
+      font-size: 24px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    align-items: center;
+  }
+
+  &__buttons {
+
+    @include max-w($sm) {
+      display: none;
+    }
+  }
+
+  &__arrow {
+    z-index: 5;
+    padding: 11px 19px;
+    background-color: rgba($white, 0.8);
+    outline: 0;
+    transition: box-shadow 0.5s, background-color 0.4s;
+    border-radius: 6px;
+    border: 1px solid $silver;
+    right: 60px;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($green-900, 0.5);
+    }
+
+    &:hover {
+      background-color: $green-200;
+      fill: $green-900;
+    }
+
+    &:active {
+      fill: $green-900;
+    }
+
+    &--prev {
+      margin-right: 27px;
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include max-w($xs) {
+      bottom: 50px;
+    }
+
+    li {
+      margin-right: 12px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    button {
+      background-color: $white;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid $silver;
+      font-size: 0;
+      padding: 0;
+    }
+
+    .slick-active {
+      button {
+        background-color: $green-900;
+        border-color: $green-900;
+      }
+    }
+  }
+
+
+
+}
