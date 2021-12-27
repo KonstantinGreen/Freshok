@@ -25,7 +25,7 @@
   &__info {
     position: relative;
     width: 100%;
-    padding: 24px 24px 24px 22px;
+    padding: 24px;
     z-index: 4;
 
     @include max-w($lg) {
@@ -71,7 +71,7 @@
     text-transform: uppercase;
     letter-spacing: 0;
     z-index: 5;
-    @include truncate(4, 1.3);
+    @include truncate(3, 1.3);
 
     @include max-w($md) {
       font-size: 50px;
@@ -126,7 +126,7 @@
     font-size: 16px;
     color: $dark-500;
     margin-bottom: 40px;
-    @include truncate(2, 1.4);
+    @include truncate(4, 1.4);
 
     @include max-w($md) {
       max-width: 500px;
@@ -578,13 +578,13 @@
 
     &:focus {
       box-shadow: 0 0 0 3px $green-200;
-      border-bottom: none;
+      border-bottom: transparent;
       border-radius: 3px;
     }
 
     &:hover {
-      color: $green-dark;
-      border-color: $green-dark;
+      color: $green-950;
+      border-color: $green-950;
     }
 
     &:active {

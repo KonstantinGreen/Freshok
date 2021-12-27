@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
 <header class="header" id="header">
 
   <nav class="header__nav">
@@ -51,7 +52,7 @@
             </div>
 
             <div class="drop">
-              <button class="drop__btn" href="#" type="button">
+              <button class="drop__btn" type="button">
                 Каталог товаров
               </button>
               <ul class="drop__submenu">
@@ -124,10 +125,10 @@
                 </div>
               </address>
 
-              <ul class="social social--rightside-menu">
+              <ul class="social social--black">
                 <li class="social__item">
                   <a class="social__link" href="#" target="_blank" width="32" height="32">
-                    <svg class="social__svg social__svg--black">
+                    <svg class="social__svg">
                       <use xlink:href="images/sprite.svg#facebook"></use>
                     </svg>
                     <span class="sr-only">Посмотреть facebook</span>
@@ -136,7 +137,7 @@
 
                 <li class="social__item">
                   <a class="social__link" href="#" target="_blank" width="32" height="32">
-                    <svg class="social__svg social__svg--black">
+                    <svg class="social__svg">
                       <use xlink:href="images/sprite.svg#youtube"></use>
                     </svg>
                     <span class="sr-only">Посмотреть youtube</span>
@@ -145,7 +146,7 @@
 
                 <li class="social__item">
                   <a class="social__link" href="#" target="_blank" width="32" height="32">
-                    <svg class="social__svg social__svg--black">
+                    <svg class="social__svg">
                       <use xlink:href="images/sprite.svg#telegram"></use>
                     </svg>
                     <span class="sr-only">Посмотреть telegram</span>
@@ -154,7 +155,7 @@
 
                 <li class="social__item">
                   <a class="social__link" href="#" target="_blank" width="32" height="32">
-                    <svg class="social__svg social__svg--black">
+                    <svg class="social__svg">
                       <use xlink:href="images/sprite.svg#instagram"></use>
                     </svg>
                     <span class="sr-only">Посмотреть instagram</span>
@@ -162,8 +163,6 @@
                 </li>
 
               </ul>
-
-
 
             </div>
 
@@ -267,7 +266,6 @@
       </div>
     </div>
 
-
     <div class="header__content">
 
       <div class="container">
@@ -276,12 +274,12 @@
           <a class="logo" href="#">
             <picture class="logo__img">
               <source srcset="images/icons/logo.svg" media="(min-width:481px)">
-              <img src="images/icons/logo-mobile.svg" alt="logo">
+              <img class="logo__img-mobile" src="images/icons/logo-mobile.svg" alt="лого" width="200" height="60">
             </picture>
           </a>
 
           <div class="drop drop--md">
-            <button class="drop__btn" href="#" type="button">
+            <button class="drop__btn" type="button">
               Каталог продуктов
               <svg class="drop__svg">
                 <use xlink:href="images/sprite.svg#chevron"></use>
@@ -348,7 +346,9 @@
 
 
           <form class="form-search">
-            <label class="sr-only" for="form-search__input">Введите название товара в поиск</label>
+            <label class="sr-only" for="form-search__input">
+              Введите название товара в поиск
+            </label>
             <input class="form-search__input" id="form-search__input" name="form-search"
               placeholder="Найти в магазине ..." type="search" required>
             <button class="btn btn--search" type="submit">Поиск</button>
@@ -391,24 +391,36 @@
     </div>
   </nav>
 </header>
+
 <main class="main" id="main">
+
   <div class="breadcrumbs">
   <div class="container">
+
     <ul class="breadcrumbs__list">
+
       <li class="breadcrumbs__item">
-        <a class="breadcumbs__link" href="#">Главная</a>
+        <a class="breadcrumbs__link" href="#">Главная</a>
       </li>
+
       <li class="breadcrumbs__item">
-        <a class="breadcumbs__link" href="#">Каталог товаров</a>
+        <a class="breadcrumbs__link" href="#">Каталог товаров</a>
       </li>
+
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="#"></a>
+      </li>
+
+
     </ul>
   </div>
 </div>
+
   <section class="catalog">
   <div class="container">
     <h2 class="catalog__title">Каталог товаров</h2>
     <div class="catalog__inner">
-      <button class="catalog__close-btn"></button>
+      <button class="catalog__close-btn" type="button"></button>
       <ul class="filters">
         <li class="filter filter-category">
           <button class="filter__btn" type="button" id="filter-category-btn">
@@ -631,26 +643,34 @@
 
       <div class="catalog-content">
         <div class="filter-content">
-          <button class="filters-btn" id="filters-btn">
+          <button class="filters-btn" id="filters-btn" type="button">
             <svg class="filter-content__svg">
               <use xlink:href="images/sprite.svg#filters-btn"></use>
             </svg>
           </button>
           <div class="filter-content__selects">
             <form class="filter-content__filter-form" action="#">
-              <select class="filter-content__select-sort select-style" id="filter-content__select-sort">
-                <option value="По названию">По названию</option>
-                <option value="По популярности">По популярности</option>
-                <option value="Сначала дешевые">Сначала дешевые</option>
-                <option value="Сначала дорогие">Сначала дорогие</option>
-                <option value="По алфавиту">По алфавиту</option>
-              </select>
-              <select class="filter-content__select-show select-style">
-                <option value="по 12">по 12</option>
-                <option value="по 18">по 18</option>
-                <option value="по 30">по 30</option>
-                <option value="по 36">по 36</option>
-              </select>
+
+              <label class="filter-content__select-label">
+                <select class="filter-content__select-sort select-style" id="filter-content__select-sort"
+                  name="select-sort">
+                  <option value="По названию">По названию</option>
+                  <option value="По популярности">По популярности</option>
+                  <option value="Сначала дешевые">Сначала дешевые</option>
+                  <option value="Сначала дорогие">Сначала дорогие</option>
+                  <option value="По алфавиту">По алфавиту</option>
+                </select>
+              </label>
+
+              <label class="filter-content__select-label">
+                <select class="filter-content__select-show select-style" name="select-show">
+                  <option value="по 12">по 12</option>
+                  <option value="по 18">по 18</option>
+                  <option value="по 30">по 30</option>
+                  <option value="по 36">по 36</option>
+                </select>
+              </label>
+
             </form>
           </div>
           <div class="filter-content__buttons">
@@ -1573,6 +1593,7 @@
 
   </div>
 </section>
+
   <div class="advantages advantages--catalog">
   <div class="container">
     <ul class="advantages__list">
@@ -1603,7 +1624,10 @@
     </ul>
   </div>
 </div>
-  <footer class="footer">
+
+</main>
+
+<footer class="footer">
   <div class="container">
     <div class="footer__top">
       <a class="logo logo--center" href="#">
@@ -1759,8 +1783,8 @@
   </div>
 
 </footer>
-  <script src="js/main.min.js"></script>
+
+<script src="js/main.min.js"></script>
 </body>
 
 </html>
-</main>

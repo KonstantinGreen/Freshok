@@ -2,19 +2,19 @@
 
 @include('components/_header.html')
 
-<main class="main" id="main">
+<main class="main">
 
   @include('components/_breadcrumbs.html',{
   "name": {
   "1": "Главная",
   "2": "Каталог товаров",
-  "3": ""
+  "3": "Питахайя красная с белой мякотью"
   }
   })
 
-  @include('components/_catalog.html')
+  @include('components/_product-one.html')
 
-  @include('components/_advantages--catalog.html')
+  @include('components/_cards-slider.html')
 
 </main>
 

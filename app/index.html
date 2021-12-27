@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
 <header class="header" id="header">
 
   <nav class="header__nav">
@@ -51,7 +52,7 @@
             </div>
 
             <div class="drop">
-              <button class="drop__btn" href="#" type="button">
+              <button class="drop__btn" type="button">
                 Каталог товаров
               </button>
               <ul class="drop__submenu">
@@ -124,10 +125,10 @@
                 </div>
               </address>
 
-              <ul class="social social--rightside-menu">
+              <ul class="social social--black">
                 <li class="social__item">
                   <a class="social__link" href="#" target="_blank" width="32" height="32">
-                    <svg class="social__svg social__svg--black">
+                    <svg class="social__svg">
                       <use xlink:href="images/sprite.svg#facebook"></use>
                     </svg>
                     <span class="sr-only">Посмотреть facebook</span>
@@ -136,7 +137,7 @@
 
                 <li class="social__item">
                   <a class="social__link" href="#" target="_blank" width="32" height="32">
-                    <svg class="social__svg social__svg--black">
+                    <svg class="social__svg">
                       <use xlink:href="images/sprite.svg#youtube"></use>
                     </svg>
                     <span class="sr-only">Посмотреть youtube</span>
@@ -145,7 +146,7 @@
 
                 <li class="social__item">
                   <a class="social__link" href="#" target="_blank" width="32" height="32">
-                    <svg class="social__svg social__svg--black">
+                    <svg class="social__svg">
                       <use xlink:href="images/sprite.svg#telegram"></use>
                     </svg>
                     <span class="sr-only">Посмотреть telegram</span>
@@ -154,7 +155,7 @@
 
                 <li class="social__item">
                   <a class="social__link" href="#" target="_blank" width="32" height="32">
-                    <svg class="social__svg social__svg--black">
+                    <svg class="social__svg">
                       <use xlink:href="images/sprite.svg#instagram"></use>
                     </svg>
                     <span class="sr-only">Посмотреть instagram</span>
@@ -162,8 +163,6 @@
                 </li>
 
               </ul>
-
-
 
             </div>
 
@@ -267,7 +266,6 @@
       </div>
     </div>
 
-
     <div class="header__content">
 
       <div class="container">
@@ -276,12 +274,12 @@
           <a class="logo" href="#">
             <picture class="logo__img">
               <source srcset="images/icons/logo.svg" media="(min-width:481px)">
-              <img src="images/icons/logo-mobile.svg" alt="logo">
+              <img class="logo__img-mobile" src="images/icons/logo-mobile.svg" alt="лого" width="200" height="60">
             </picture>
           </a>
 
           <div class="drop drop--md">
-            <button class="drop__btn" href="#" type="button">
+            <button class="drop__btn" type="button">
               Каталог продуктов
               <svg class="drop__svg">
                 <use xlink:href="images/sprite.svg#chevron"></use>
@@ -348,7 +346,9 @@
 
 
           <form class="form-search">
-            <label class="sr-only" for="form-search__input">Введите название товара в поиск</label>
+            <label class="sr-only" for="form-search__input">
+              Введите название товара в поиск
+            </label>
             <input class="form-search__input" id="form-search__input" name="form-search"
               placeholder="Найти в магазине ..." type="search" required>
             <button class="btn btn--search" type="submit">Поиск</button>
@@ -391,8 +391,11 @@
     </div>
   </nav>
 </header>
+
 <main class="main">
+
   <h1 class="sr-only">Фрешок магазин продуктов</h1>
+
   <section class="slider-main">
 
   <ul class="slider-main__list">
@@ -474,6 +477,7 @@
   </ul>
 
 </section>
+
   <div class="advantages">
   <div class="container">
     <ul class="advantages__list">
@@ -504,6 +508,7 @@
     </ul>
   </div>
 </div>
+
   <section class="top-products">
   <div class="container container--big" data-ref="container-1">
     <h2 class="title">
@@ -979,6 +984,7 @@
     <button class="btn btn--transparent" type="button">Показать еще</button>
   </div>
 </section>
+
   <section class="banners">
   <div class="container container--big">
     <h2 class="sr-only">Баннеры</h2>
@@ -1039,6 +1045,7 @@
     </ul>
   </div>
 </section>
+
   <section class="promo">
   <div class="container container--big" data-ref="container-2">
     <h2 class="title">Акции</h2>
@@ -1127,7 +1134,7 @@
                 Кофе с коноплей органический Caffé Salomoni 250г
               </h3>
               <div class="card-promo__price">
-                <span class="availibility availability--red">
+                <span class="availability availability--red">
                   Заканчивается
                 </span>
                 <div class="pricing pricing--promo">
@@ -1417,6 +1424,7 @@
     <button class="btn" type="button">Показать еще</button>
   </div>
 </section>
+
   <div class="brands-slider">
 
   <div class="container">
@@ -1471,6 +1479,7 @@
     </div>
   </div>
 </div>
+
   <section class="news">
   <div class="container">
     <div class="news__top">
@@ -1483,7 +1492,7 @@
     </div>
     <ul class="news__list">
       <li class="news__item">
-        <artile class="news-card">
+        <article class="news-card">
           <a class="news-card__link" href="#">
             <img class="news-card__img" src="images/content/news/strawberry.jpg" width="410" height="240"
               alt="Клубника">
@@ -1498,7 +1507,7 @@
               разобрали!
             </h3>
           </a>
-        </artile>
+        </article>
       </li>
 
       <li class="news__item">
@@ -1538,7 +1547,10 @@
     </ul>
   </div>
 </section>
-  <footer class="footer">
+
+</main>
+
+<footer class="footer">
   <div class="container">
     <div class="footer__top">
       <a class="logo logo--center" href="#">
@@ -1694,8 +1706,8 @@
   </div>
 
 </footer>
-  <script src="js/main.min.js"></script>
+
+<script src="js/main.min.js"></script>
 </body>
 
 </html>
-</main>

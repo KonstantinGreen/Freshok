@@ -9,7 +9,6 @@
       margin-bottom: 20px;
       text-align: center;
     }
-
   }
 
   &__menu {
@@ -139,7 +138,6 @@
     color: $white;
     text-transform: uppercase;
   }
-
 }
 
 .payment {
@@ -220,6 +218,9 @@
     padding: 12px;
     border-radius: 6px 0 0 6px;
     border: 1px solid transparent;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
 
     @include max-w($lg) {
       max-width: 142px;
@@ -228,12 +229,6 @@
     @include max-w($sm) {
       width: 100%;
       max-width: 300px;
-    }
-
-    &::placeholder {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 1;
     }
   }
 }
@@ -280,7 +275,7 @@
     position: relative;
     outline: 0;
     border-radius: 6px;
-    transition: box-shadow 0.5s, color 0.4s, opacity 0.4s;
+    transition: box-shadow 0.5s, background-color 0.4s, color 0.4s, opacity 0.4s;
 
     &::before {
       position: absolute;
@@ -302,7 +297,6 @@
     &:active {
       color: $green-200;
     }
-
   }
 }
 
@@ -313,8 +307,12 @@
     justify-content: center;
   }
 
-  &--rightside-menu {
+  &--black {
     justify-content: flex-start;
+
+    .social__svg {
+      fill: $dark-900;
+    }
   }
 
   &__link {
@@ -342,10 +340,6 @@
     height: 32px;
     transition: opacity 0.5s;
     fill: $white;
-
-    &--black {
-      fill: $dark-900;
-    }
   }
 
 }
